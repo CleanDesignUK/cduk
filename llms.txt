@@ -1,19 +1,18 @@
 # Clean Design UK
 
-Clean Design UK is a web design and digital services company based in Caergeiliog, Anglesey, North Wales, UK.
+Clean Design UK is a North Wales web design and digital studio based in Caergeiliog, Anglesey, serving businesses across Wales and the UK.
 
-Primary services:
-- Website design
-- E-commerce website design
-- SEO and local SEO
-- AI search optimisation, including GEO and AEO
+Core services:
+- Website design and development
+- Ecommerce
 - Branding
 - Digital marketing
-- Sales funnels and automation
+- SEO and local search
+- AI search optimisation / AEO / GEO strategy
+- Sales funnels and CRM automation
 - GoHighLevel CRM support
 
-Primary service area: Anglesey and North Wales, including Gwynedd, Bangor, Caernarfon, Llandudno and Wrexham. Clean Design UK also works with businesses across Wales and the wider UK.
+Primary website: https://cleandesignuk.com/
+Contact: jesse@cleandesignuk.com | +44 7367 292269
 
-Website: https://cleandesignuk.com/
-Email: jesse@cleandesignuk.com
-WhatsApp: +44 7367 292269
+Note: This file is supplied as a concise machine-readable summary for systems that choose to read it. Google Search does not require llms.txt for generative search visibility.

@@ -1,222 +1,101 @@
-<header class="site-header" data-site-header>
-  <div class="nav-shell">
-
-    <a class="brand" href="/" aria-label="Clean Design UK home">
-      <span class="brand-mark" aria-hidden="true">
-        <img
-          src="https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=96&h=96&fit=crop"
-          alt=""
-        >
-      </span>
-
-      <span class="brand-name">Clean Design UK</span>
-    </a>
-
-
-    <nav class="desktop-nav" aria-label="Primary navigation">
-
-      <a href="/">Home</a>
-
-      <a href="/about/">About</a>
-
-
-      <div class="nav-dropdown" data-dropdown>
-
-        <button
-          class="nav-dropdown-button"
-          type="button"
-          aria-expanded="false"
-          aria-controls="services-menu"
-        >
-          <span>Services</span>
-
-          <svg
-            class="dropdown-chevron"
-            viewBox="0 0 12 8"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <path
-              d="M1 1.5 6 6.5 11 1.5"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.6"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-
-
-        <div
-          class="nav-dropdown-panel"
-          id="services-menu"
-          role="menu"
-        >
-
-          <a role="menuitem" href="/website-design/">
-            Website Design
-          </a>
-
-          <a role="menuitem" href="/ecommerce/">
-            E-commerce
-          </a>
-
-          <a role="menuitem" href="/seo/">
-            SEO &amp; Local SEO
-          </a>
-
-          <a role="menuitem" href="/ai-search-optimisation/">
-            AI Search Optimisation
-          </a>
-
-          <a role="menuitem" href="/branding/">
-            Branding
-          </a>
-
-          <a role="menuitem" href="/digital-marketing/">
-            Digital Marketing
-          </a>
-
-          <a role="menuitem" href="/sales-funnels-automation/">
-            Sales Funnels &amp; Automation
-          </a>
-
-          <a role="menuitem" href="/gohighlevel-support/">
-            GoHighLevel CRM Support
-          </a>
-
-        </div>
-      </div>
-
-
-      <a href="/portfolio/">Portfolio</a>
-
-      <a href="/blog/">Blog</a>
-
-      <a href="/contact/">Contact</a>
-
-    </nav>
-
-
-    <a
-      class="button button-light nav-cta"
-      href="#quote"
-    >
-      Get a Free Quote
-    </a>
-
-
-    <button
-      class="mobile-menu-button"
-      type="button"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-    >
-      <span>Menu</span>
-
-      <span class="menu-lines" aria-hidden="true">
-        <i></i>
-        <i></i>
-      </span>
+<header class="site-header" id="siteHeader">
+ <div class="nav-shell">
+  <a aria-label="Clean Design UK home" class="brand" href="/">
+   <img alt="" height="37" src="/images/cduk-mark.webp" width="37"/>
+   <span>
+    Clean Design UK
+   </span>
+  </a>
+  <nav aria-label="Main navigation" class="nav-main">
+   <a class="nav-link" data-nav="home" href="/">
+    Home
+   </a>
+   <a class="nav-link" data-nav="about" href="/html/about-web-design-agency-wales.html">
+    About
+   </a>
+   <div class="nav-services">
+    <button aria-controls="servicesMenu" aria-expanded="false" class="services-toggle" type="button">
+     Services
     </button>
-
-  </div>
-
-
-  <div
-    class="mobile-menu"
-    id="mobile-menu"
-    hidden
-  >
-
-    <nav
-      class="mobile-menu-inner"
-      aria-label="Mobile navigation"
-    >
-
-      <a href="/">Home</a>
-
-      <a href="/about/">About</a>
-
-
-      <details class="mobile-services">
-
-        <summary>
-          <span>Services</span>
-
-          <svg
-            class="dropdown-chevron"
-            viewBox="0 0 12 8"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <path
-              d="M1 1.5 6 6.5 11 1.5"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.6"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </summary>
-
-
-        <div class="mobile-service-links">
-
-          <a href="/website-design/">
-            Website Design
-          </a>
-
-          <a href="/ecommerce/">
-            E-commerce
-          </a>
-
-          <a href="/seo/">
-            SEO &amp; Local SEO
-          </a>
-
-          <a href="/ai-search-optimisation/">
-            AI Search Optimisation
-          </a>
-
-          <a href="/branding/">
-            Branding
-          </a>
-
-          <a href="/digital-marketing/">
-            Digital Marketing
-          </a>
-
-          <a href="/sales-funnels-automation/">
-            Sales Funnels &amp; Automation
-          </a>
-
-          <a href="/gohighlevel-support/">
-            GoHighLevel CRM Support
-          </a>
-
-        </div>
-
-      </details>
-
-
-      <a href="/portfolio/">Portfolio</a>
-
-      <a href="/blog/">Blog</a>
-
-      <a href="/contact/">Contact</a>
-
-
-      <a
-        class="button button-red mobile-quote"
-        href="#quote"
-      >
-        Get a Free Quote
-      </a>
-
-    </nav>
-
-  </div>
+    <div class="services-menu" id="servicesMenu">
+     <a href="/html/web-design-digital-services.html">
+      <span>
+       All services
+      </span>
+      <span>
+      </span>
+     </a>
+     <a href="/html/website-design.html">
+      <span>
+       Website Design
+      </span>
+      <span>
+      </span>
+     </a>
+     <a href="/html/ecommerce.html">
+      <span>
+       Ecommerce
+      </span>
+      <span>
+      </span>
+     </a>
+     <a href="/html/branding.html">
+      <span>
+       Branding
+      </span>
+      <span>
+      </span>
+     </a>
+     <a href="/html/digital-marketing.html">
+      <span>
+       Digital Marketing
+      </span>
+      <span>
+      </span>
+     </a>
+     <a href="/html/seo.html">
+      <span>
+       SEO &amp; Search Visibility
+      </span>
+      <span>
+      </span>
+     </a>
+     <a href="/html/sales-funnels.html">
+      <span>
+       Sales Funnels &amp; Automation
+      </span>
+      <span>
+      </span>
+     </a>
+     <a href="/html/gohighlevel-support.html">
+      <span>
+       GoHighLevel CRM Support
+      </span>
+      <span>
+      </span>
+     </a>
+    </div>
+   </div>
+   <a class="nav-link" data-nav="portfolio" href="/html/website-design-portfolio-uk.html">
+    Our Work
+   </a>
+   <a class="nav-link" data-nav="blog" href="/html/web-design-seo-blog.html">
+    Blog
+   </a>
+   <a class="nav-link" data-nav="contact" href="/html/contact-web-design-agency-wales.html">
+    Contact
+   </a>
+  </nav>
+  <a class="btn btn-primary nav-cta" href="/html/contact-web-design-agency-wales.html">
+   Free consultation
+   <span aria-hidden="true">
+   </span>
+  </a>
+  <button aria-expanded="false" aria-label="Open menu" class="menu-toggle" type="button">
+   <span>
+   </span>
+   <span>
+   </span>
+  </button>
+ </div>
 </header>
