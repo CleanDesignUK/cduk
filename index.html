@@ -6,17 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Website Design North Wales | Clean Design UK</title>
-  <meta name="description" content="Professional website design, ecommerce, SEO, branding and digital marketing for businesses in North Wales, Wales and across the UK. View our work and request a free consultation.">
+  <meta name="description" content="Professional website design, SEO, ecommerce, branding and digital marketing for businesses across North Wales, Wales and the UK. Request a free consultation.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#090b0b">
   <link rel="canonical" href="https://cleandesignuk.com/">
 
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_GB">
   <meta property="og:site_name" content="Clean Design UK">
+  <meta property="og:locale" content="en_GB">
   <meta property="og:title" content="Website Design in North Wales | Clean Design UK">
-  <meta property="og:description" content="Website design, SEO, ecommerce and digital marketing across North Wales, Wales and the UK.">
+  <meta property="og:description" content="Website design, ecommerce, SEO and digital marketing across North Wales, Wales and the UK.">
   <meta property="og:url" content="https://cleandesignuk.com/">
+  <meta property="og:image" content="https://cleandesignuk.com/images/portfolio/north-wales-tutoring.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,8 +35,8 @@
         "@id": "https://cleandesignuk.com/#business",
         "name": "Clean Design UK",
         "url": "https://cleandesignuk.com/",
-        "telephone": "+447367292269",
         "email": "jesse@cleandesignuk.com",
+        "telephone": "+447367292269",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "4 Ffordd Cerrig Mawr",
@@ -49,34 +50,33 @@
           {"@type": "AdministrativeArea", "name": "Wales"},
           {"@type": "Country", "name": "United Kingdom"}
         ],
-        "sameAs": [
-          "https://www.instagram.com/cleandesign_uk",
-          "https://www.facebook.com/CleanDesignUK",
-          "https://www.linkedin.com/company/clean-design-uk",
-          "https://www.tiktok.com/@clean.design.uk",
-          "https://www.youtube.com/@CleanDesignUK"
-        ]
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Website Design and Digital Services",
+          "itemListElement": [
+            {"@type": "OfferCatalog", "name": "Website Design"},
+            {"@type": "OfferCatalog", "name": "Ecommerce Development"},
+            {"@type": "OfferCatalog", "name": "Search Engine Optimisation"},
+            {"@type": "OfferCatalog", "name": "Branding"},
+            {"@type": "OfferCatalog", "name": "Digital Marketing"},
+            {"@type": "OfferCatalog", "name": "CRM and Automation"}
+          ]
+        }
       },
       {
         "@type": "WebSite",
         "@id": "https://cleandesignuk.com/#website",
-        "url": "https://cleandesignuk.com/",
         "name": "Clean Design UK",
-        "publisher": {
-          "@id": "https://cleandesignuk.com/#business"
-        }
+        "url": "https://cleandesignuk.com/",
+        "publisher": {"@id": "https://cleandesignuk.com/#business"}
       },
       {
         "@type": "WebPage",
         "@id": "https://cleandesignuk.com/#webpage",
-        "url": "https://cleandesignuk.com/",
         "name": "Website Design in North Wales",
-        "isPartOf": {
-          "@id": "https://cleandesignuk.com/#website"
-        },
-        "about": {
-          "@id": "https://cleandesignuk.com/#business"
-        }
+        "url": "https://cleandesignuk.com/",
+        "isPartOf": {"@id": "https://cleandesignuk.com/#website"},
+        "about": {"@id": "https://cleandesignuk.com/#business"}
       }
     ]
   }
@@ -85,21 +85,20 @@
 
 <body data-page="home">
 
-  <!-- Shared navigation: one navbar only -->
+  <!-- Shared navbar -->
   <div id="site-navbar"></div>
 
   <main id="main-content">
 
-    <!-- ========================================
+    <!-- =========================================
          HERO
-    ========================================= -->
+    ========================================== -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-ambient hero-ambient-left" aria-hidden="true"></div>
-      <div class="hero-ambient hero-ambient-right" aria-hidden="true"></div>
 
       <div class="container hero-inner">
 
         <div class="hero-copy reveal">
+
           <span class="eyebrow eyebrow-glass">
             WEBSITE DESIGN · SEO · DIGITAL MARKETING
           </span>
@@ -115,16 +114,18 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="/html/contact-web-design-agency-wales.html">
+            <a href="/html/contact-web-design-agency-wales.html" class="btn btn-primary">
               Free consultation
             </a>
-            <a class="btn btn-white" href="/html/website-design-portfolio-uk.html">
+
+            <a href="/html/website-design-portfolio-uk.html" class="btn btn-white">
               View our work
             </a>
           </div>
+
         </div>
 
-        <!-- Above-the-fold form -->
+        <!-- Above-the-fold enquiry form -->
         <form
           class="lead-form hero-form reveal"
           action="https://api.web3forms.com/submit"
@@ -139,75 +140,163 @@
 
           <div class="honeypot" aria-hidden="true">
             <label for="hero-botcheck">Leave blank</label>
-            <input id="hero-botcheck" type="text" name="botcheck" tabindex="-1" autocomplete="off">
+            <input
+              id="hero-botcheck"
+              name="botcheck"
+              type="text"
+              tabindex="-1"
+              autocomplete="off"
+            >
           </div>
 
           <div class="hero-form-fields">
+
             <label class="sr-only" for="hero-name">Your name</label>
-            <input id="hero-name" type="text" name="name" placeholder="Your name" autocomplete="name" required>
+            <input
+              id="hero-name"
+              type="text"
+              name="name"
+              placeholder="Your name"
+              autocomplete="name"
+              required
+            >
 
             <label class="sr-only" for="hero-email">Email address</label>
-            <input id="hero-email" type="email" name="email" placeholder="Email address" autocomplete="email" required>
+            <input
+              id="hero-email"
+              type="email"
+              name="email"
+              placeholder="Email address"
+              autocomplete="email"
+              required
+            >
 
             <label class="sr-only" for="hero-phone">UK phone number</label>
-            <input id="hero-phone" type="tel" name="phone" placeholder="UK phone number" autocomplete="tel" required>
+            <input
+              id="hero-phone"
+              type="tel"
+              name="phone"
+              placeholder="UK phone number"
+              autocomplete="tel"
+              required
+            >
 
-            <button class="btn btn-primary" type="submit">Get a quote</button>
+            <button type="submit" class="btn btn-primary">
+              Get a quote
+            </button>
+
           </div>
 
           <p class="form-status" aria-live="polite"></p>
+
         </form>
+      </div>
 
-        <!-- Full website screenshot preview -->
-        <div class="hero-showcase reveal">
+      <!-- =========================================
+           SQUARE PORTFOLIO GALLERY
 
-          <div class="showcase-floating showcase-floating-left">
-            <span class="mini-tag">OUR WORK</span>
-            <strong>Custom Website Design</strong>
-            <span>Responsive · Search-Friendly</span>
-          </div>
+           Five square image cards.
+           No visible labels or links.
+           Desktop: spread on scroll.
+           Mobile: swipe + arrow navigation.
+      ========================================== -->
+      <div class="hero-gallery" id="heroGallery">
 
-          <div class="showcase-browser">
-            <div class="showcase-browser-bar">
-              <div class="window-controls" aria-hidden="true">
-                <span></span><span></span><span></span>
-              </div>
-              <span>Featured website design</span>
-            </div>
+        <div class="hero-gallery-stage">
 
-            <div class="showcase-browser-image">
+          <div
+            class="hero-gallery-track"
+            id="heroGalleryTrack"
+            role="group"
+            aria-label="Featured website design projects"
+          >
+
+            <div class="hero-gallery-card">
               <img
                 src="/images/portfolio/north-wales-tutoring.webp"
-                alt="Full website screenshot of North Wales Tutoring Group"
-                width="1100"
-                height="650"
+                alt="North Wales Tutoring Group website design"
+                width="700"
+                height="700"
                 fetchpriority="high"
               >
             </div>
+
+            <div class="hero-gallery-card">
+              <img
+                src="/images/portfolio/sand-arts-crafts.webp"
+                alt="Sand Arts and Crafts website design"
+                width="700"
+                height="700"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="hero-gallery-card">
+              <img
+                src="/images/portfolio/solar-store-uk.webp"
+                alt="Solar Store UK website design"
+                width="700"
+                height="700"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="hero-gallery-card">
+              <img
+                src="/images/portfolio/talk-with-sian.webp"
+                alt="Talk With Sian website design"
+                width="700"
+                height="700"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="hero-gallery-card">
+              <img
+                src="/images/portfolio/yrs-recruitment.webp"
+                alt="YRS Recruitment website design"
+                width="700"
+                height="700"
+                loading="lazy"
+              >
+            </div>
+
           </div>
 
-          <div class="showcase-floating showcase-floating-right">
-            <span class="mini-tag">DIGITAL SERVICES</span>
-            <div class="showcase-service-list">
-              <span>Website Design</span>
-              <span>SEO & Local Search</span>
-              <span>Ecommerce</span>
-              <span>CRM Automation</span>
-            </div>
+          <div class="hero-gallery-controls" aria-label="Portfolio navigation">
+
+            <button
+              type="button"
+              id="heroGalleryPrev"
+              class="hero-gallery-arrow"
+              aria-label="Previous portfolio image"
+            >‹</button>
+
+            <button
+              type="button"
+              id="heroGalleryNext"
+              class="hero-gallery-arrow"
+              aria-label="Next portfolio image"
+            >›</button>
+
           </div>
 
         </div>
       </div>
+
     </section>
 
-    <!-- ========================================
+    <!-- =========================================
          ABOUT
-    ========================================= -->
+    ========================================== -->
     <section class="section about-section" aria-labelledby="about-title">
       <div class="container">
 
         <div class="section-heading centred reveal">
-          <span class="section-tag"><span class="tag-dot"></span> About Clean Design UK</span>
+
+          <span class="section-tag">
+            <span class="tag-dot"></span> About Clean Design UK
+          </span>
 
           <h2 id="about-title">
             Website Design & Digital Services
@@ -215,166 +304,217 @@
           </h2>
 
           <p>
-            We design websites and provide SEO, ecommerce,
-            branding and digital marketing for businesses
-            across North Wales, Wales and the wider UK.
+            We design websites and provide SEO, ecommerce, branding
+            and digital marketing for businesses across North Wales,
+            Wales and the wider UK.
           </p>
 
-          <a class="btn btn-dark" href="/html/about-web-design-agency-wales.html">
+          <a href="/html/about-web-design-agency-wales.html" class="btn btn-dark">
             About us
           </a>
         </div>
 
         <div class="about-cards mobile-carousel" data-carousel>
 
-          <article class="about-card reveal" style="--stagger:0ms">
+          <article class="about-card reveal">
+
             <div class="about-card-heading">
               <span class="about-card-number">01</span>
               <span class="about-card-icon" aria-hidden="true">✦</span>
             </div>
+
             <h3>Website Design</h3>
+
             <p>
-              Modern, responsive websites designed to represent your
-              business and help customers find what they need.
+              Responsive business websites designed to represent your
+              services and help customers find what they need.
             </p>
+
             <div class="about-card-footer">
               <span>Business websites</span>
               <span aria-hidden="true">●</span>
             </div>
+
           </article>
 
-          <article class="about-card reveal" style="--stagger:90ms">
+          <article class="about-card reveal">
+
             <div class="about-card-heading">
               <span class="about-card-number">02</span>
               <span class="about-card-icon" aria-hidden="true">◈</span>
             </div>
+
             <h3>SEO & AI Search</h3>
+
             <p>
-              Search engine optimisation, local SEO and structured
-              content for Google and AI-assisted search.
+              Search optimisation, local SEO and structured content
+              for traditional search and AI-assisted discovery.
             </p>
+
             <div class="about-card-footer">
               <span>Search visibility</span>
               <span aria-hidden="true">●</span>
             </div>
+
           </article>
 
-          <article class="about-card reveal" style="--stagger:180ms">
+          <article class="about-card reveal">
+
             <div class="about-card-heading">
               <span class="about-card-number">03</span>
               <span class="about-card-icon" aria-hidden="true">◇</span>
             </div>
+
             <h3>Ecommerce</h3>
+
             <p>
-              Ecommerce websites with organised products,
-              clear navigation and straightforward purchasing journeys.
+              Ecommerce websites with organised products, clear
+              navigation and straightforward shopping journeys.
             </p>
+
             <div class="about-card-footer">
               <span>Online shops</span>
               <span aria-hidden="true">●</span>
             </div>
+
           </article>
 
-          <article class="about-card reveal" style="--stagger:270ms">
+          <article class="about-card reveal">
+
             <div class="about-card-heading">
               <span class="about-card-number">04</span>
               <span class="about-card-icon" aria-hidden="true">◎</span>
             </div>
+
             <h3>CRM & Automation</h3>
+
             <p>
-              Customer pipelines, follow-up workflows,
-              lead management and GoHighLevel CRM support.
+              Customer pipelines, lead management, follow-up
+              workflows and GoHighLevel CRM support.
             </p>
+
             <div class="about-card-footer">
               <span>Business automation</span>
               <span aria-hidden="true">●</span>
             </div>
+
           </article>
+
         </div>
 
         <div class="carousel-controls">
           <button type="button" class="carousel-control" data-prev aria-label="Previous card">‹</button>
           <button type="button" class="carousel-control" data-next aria-label="Next card">›</button>
         </div>
+
       </div>
     </section>
 
-    <!-- ========================================
+    <!-- =========================================
          SERVICES
-    ========================================= -->
+    ========================================== -->
     <section class="section services-section" aria-labelledby="services-title">
       <div class="container">
 
         <div class="section-heading centred reveal">
+
           <span class="section-tag section-tag-dark">
             <span class="tag-dot"></span> Our Services
           </span>
+
           <h2 id="services-title">
             Website Design, SEO
             <span>& Digital Marketing</span>
           </h2>
+
           <p>
-            Website development, branding,
-            digital marketing and business automation.
+            Website development, branding, digital marketing
+            and business automation services.
           </p>
+
         </div>
 
         <div class="services-layout">
 
-          <!-- Gradient-only featured card -->
           <article class="service-feature reveal">
+
             <div class="service-feature-content">
+
               <span class="service-kicker">WEB DESIGN</span>
+
               <h3>Professional Website Design</h3>
+
               <p>
-                Custom websites, business websites and website redesigns
-                for businesses throughout North Wales and the UK.
+                Custom business websites and complete website
+                redesigns for businesses across North Wales and the UK.
               </p>
-              <a class="btn btn-white" href="/html/website-design.html">
+
+              <a href="/html/website-design.html" class="btn btn-white">
                 Website design
               </a>
+
             </div>
+
           </article>
 
           <a href="/html/seo.html" class="service-tile reveal">
+
             <span class="service-tile-icon">◈</span>
+
             <div class="service-art seo-art" aria-hidden="true">
               <span></span><span></span><span></span><span></span><span></span>
             </div>
+
             <h3>SEO & Local Search</h3>
             <p>Technical SEO, local search and AI search optimisation.</p>
+
           </a>
 
           <a href="/html/ecommerce.html" class="service-tile reveal">
+
             <span class="service-tile-icon">◇</span>
+
             <div class="service-art ecommerce-art" aria-hidden="true">
               <div class="shop-product"></div>
               <div class="shop-product"></div>
               <div class="shop-product"></div>
             </div>
+
             <h3>Ecommerce Development</h3>
             <p>Online shops, product pages and ecommerce solutions.</p>
+
           </a>
 
           <a href="/html/branding.html" class="service-tile reveal">
+
             <span class="service-tile-icon">✦</span>
+
             <div class="service-art branding-art" aria-hidden="true">
-              <span class="brand-shape brand-shape-one"></span>
-              <span class="brand-shape brand-shape-two"></span>
-              <span class="brand-shape brand-shape-three"></span>
+              <span class="brand-shape"></span>
+              <span class="brand-shape"></span>
+              <span class="brand-shape"></span>
             </div>
+
             <h3>Branding & Identity</h3>
-            <p>Visual identity, logo design and consistent branding.</p>
+            <p>Logo design, brand visuals and consistent business identity.</p>
+
           </a>
 
           <a href="/html/gohighlevel-support.html" class="service-tile service-tile-red reveal">
+
             <span class="service-tile-icon">◎</span>
+
             <div class="service-art automation-art" aria-hidden="true">
-              <span>Lead</span><span>Contact</span><span>Customer</span>
+              <span>Lead</span>
+              <span>Contact</span>
+              <span>Customer</span>
             </div>
+
             <h3>CRM & GoHighLevel</h3>
             <p>Customer pipelines, lead management and automation.</p>
+
           </a>
+
         </div>
 
         <div class="section-bottom-action">
@@ -382,29 +522,37 @@
             All services
           </a>
         </div>
+
       </div>
     </section>
 
-    <!-- ========================================
+    <!-- =========================================
          PORTFOLIO
-    ========================================= -->
+    ========================================== -->
     <section class="section portfolio-section" aria-labelledby="portfolio-title">
       <div class="container">
 
         <div class="section-heading split reveal">
+
           <div>
             <span class="section-tag section-tag-dark">
               <span class="tag-dot"></span> Our Work
             </span>
-            <h2 id="portfolio-title">Website Design <span>Portfolio</span></h2>
+
+            <h2 id="portfolio-title">
+              Website Design <span>Portfolio</span>
+            </h2>
+
             <p>
               Websites designed and developed for businesses
               and organisations across different industries.
             </p>
           </div>
+
           <a href="/html/website-design-portfolio-uk.html" class="btn btn-white">
             View all projects
           </a>
+
         </div>
 
         <div class="portfolio-grid mobile-carousel" data-carousel>
@@ -456,7 +604,7 @@
               <div class="portfolio-details">
                 <span>BUSINESS SERVICES · WEBSITE DESIGN</span>
                 <h3>Hugh Helps</h3>
-                <p>A responsive website for a professional services business.</p>
+                <p>Responsive website for a professional services business.</p>
               </div>
             </a>
           </article>
@@ -487,270 +635,47 @@
             </a>
           </article>
 
-          <article class="portfolio-card reveal">
-            <a href="/html/website-design-portfolio-uk.html">
-              <div class="portfolio-image">
-                <img src="/images/portfolio/talk-with-sian.webp" alt="Talk With Sian website" loading="lazy">
-              </div>
-              <div class="portfolio-details">
-                <span>THERAPY · WEBSITE DESIGN</span>
-                <h3>Talk With Sian</h3>
-                <p>Website design for a therapy and wellbeing service.</p>
-              </div>
-            </a>
-          </article>
-
-          <article class="portfolio-card reveal">
-            <a href="/html/website-design-portfolio-uk.html">
-              <div class="portfolio-image">
-                <img src="/images/portfolio/yrs-recruitment.webp" alt="YRS Recruitment website" loading="lazy">
-              </div>
-              <div class="portfolio-details">
-                <span>RECRUITMENT · WEBSITE DESIGN</span>
-                <h3>YRS Recruitment</h3>
-                <p>Website design for a recruitment business.</p>
-              </div>
-            </a>
-          </article>
         </div>
 
         <div class="carousel-controls">
           <button type="button" class="carousel-control" data-prev aria-label="Previous project">‹</button>
           <button type="button" class="carousel-control" data-next aria-label="Next project">›</button>
         </div>
-      </div>
-    </section>
-
-    <!-- ========================================
-         TESTIMONIALS
-    ========================================= -->
-    <section class="section testimonials-section" aria-labelledby="reviews-title">
-      <div class="container">
-
-        <div class="section-heading centred reveal">
-          <span class="section-tag">
-            <span class="tag-dot"></span> Client Reviews
-          </span>
-
-          <h2 id="reviews-title">
-            Reviews from <em>Our Clients</em>
-          </h2>
-
-          <p>
-            Feedback from businesses and customers
-            who have worked with Clean Design UK.
-          </p>
-
-          <a
-            class="btn btn-dark reviews-button"
-            href="https://g.co/kgs/4E5qzB7"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Google Reviews
-          </a>
-        </div>
-
-        <!-- Short excerpts from existing published reviews -->
-        <div class="testimonials-grid">
-
-          <article class="testimonial-card testimonial-tilt-left reveal">
-            <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
-            <blockquote>
-              "The final website was even better than I envisioned."
-            </blockquote>
-            <div class="testimonial-bottom">
-              <div class="testimonial-avatar">MP</div>
-              <div class="testimonial-person">
-                <strong>Maxine Phillips</strong>
-                <span>Client review</span>
-              </div>
-              <span class="testimonial-quote" aria-hidden="true">“</span>
-            </div>
-          </article>
-
-          <article class="testimonial-card testimonial-tilt-right reveal">
-            <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
-            <blockquote>
-              "Jesse has been so patient and understanding."
-            </blockquote>
-            <div class="testimonial-bottom">
-              <div class="testimonial-avatar">T</div>
-              <div class="testimonial-person">
-                <strong>Tina</strong>
-                <span>Client review</span>
-              </div>
-              <span class="testimonial-quote" aria-hidden="true">“</span>
-            </div>
-          </article>
-
-          <article class="testimonial-card testimonial-tilt-left reveal">
-            <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
-            <blockquote>
-              "Clear, actionable steps to improve my site."
-            </blockquote>
-            <div class="testimonial-bottom">
-              <div class="testimonial-avatar">NT</div>
-              <div class="testimonial-person">
-                <strong>Nicholas Taylor</strong>
-                <span>Client review</span>
-              </div>
-              <span class="testimonial-quote" aria-hidden="true">“</span>
-            </div>
-          </article>
-
-          <article class="testimonial-card testimonial-tilt-right reveal">
-            <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
-            <blockquote>
-              "Professional, unique, and useful advice."
-            </blockquote>
-            <div class="testimonial-bottom">
-              <div class="testimonial-avatar">NF</div>
-              <div class="testimonial-person">
-                <strong>Nathan Flatt</strong>
-                <span>Client review</span>
-              </div>
-              <span class="testimonial-quote" aria-hidden="true">“</span>
-            </div>
-          </article>
-
-          <article class="testimonial-card testimonial-tilt-left reveal">
-            <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
-            <blockquote>
-              "Excellent service and great creativity."
-            </blockquote>
-            <div class="testimonial-bottom">
-              <div class="testimonial-avatar">MB</div>
-              <div class="testimonial-person">
-                <strong>May Berbery-Canvin</strong>
-                <span>Client review</span>
-              </div>
-              <span class="testimonial-quote" aria-hidden="true">“</span>
-            </div>
-          </article>
-
-          <article class="testimonial-card testimonial-tilt-right reveal">
-            <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
-            <blockquote>
-              "Clean Design is incredible."
-            </blockquote>
-            <div class="testimonial-bottom">
-              <div class="testimonial-avatar">CW</div>
-              <div class="testimonial-person">
-                <strong>Colette Webb</strong>
-                <span>Client review</span>
-              </div>
-              <span class="testimonial-quote" aria-hidden="true">“</span>
-            </div>
-          </article>
-
-        </div>
 
       </div>
     </section>
 
-    <!-- ========================================
-         DESIGN PROCESS
-    ========================================= -->
-    <section class="section process-section" aria-labelledby="process-title">
-      <div class="container">
+ 
+<!-- Shared testimonials — same on every page -->
+<div id="site-testimonials"></div>
 
-        <div class="section-heading centred reveal">
-          <span class="section-tag"><span class="tag-dot"></span> Our Process</span>
-          <h2 id="process-title">Our Website <span>Design Process</span></h2>
-          <p>A straightforward process from your enquiry to website launch.</p>
-        </div>
 
-        <div class="process-grid mobile-carousel" data-carousel>
-
-          <article class="process-card reveal">
-            <span class="process-number">01</span>
-            <h3>Consultation & Planning</h3>
-            <p>We discuss your business, services, audience and website requirements.</p>
-            <div class="process-visual process-plan" aria-hidden="true">
-              <div class="process-window">
-                <strong>Project Overview</strong>
-                <div class="process-line"></div>
-                <div class="process-line short"></div>
-                <div class="process-line"></div>
-                <div class="process-pill">Planning</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="process-card reveal">
-            <span class="process-number">02</span>
-            <h3>Design & Development</h3>
-            <p>We create responsive layouts, develop your website and organise its content.</p>
-            <div class="process-visual process-design" aria-hidden="true">
-              <div class="design-preview">
-                <div></div><div></div><div></div>
-              </div>
-            </div>
-          </article>
-
-          <article class="process-card reveal">
-            <span class="process-number">03</span>
-            <h3>Testing & Launch</h3>
-            <p>We check responsiveness, key functionality and technical setup.</p>
-            <div class="process-visual process-launch" aria-hidden="true">
-              <div class="launch-ring"><span>✓</span></div>
-            </div>
-          </article>
-        </div>
-
-        <div class="carousel-controls">
-          <button type="button" class="carousel-control" data-prev aria-label="Previous step">‹</button>
-          <button type="button" class="carousel-control" data-next aria-label="Next step">›</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================
-         LOCATIONS
-    ========================================= -->
-    <section class="section locations-section" aria-labelledby="locations-title">
-      <div class="container">
-
-        <div class="section-heading centred reveal">
-          <span class="section-tag"><span class="tag-dot"></span> Locations</span>
-          <h2 id="locations-title">
-            Website Design <span>Across Wales & the UK</span>
-          </h2>
-          <p>We work with businesses throughout North Wales, Wales and the UK.</p>
-        </div>
-
-        <div class="location-grid mobile-carousel" data-carousel>
-          <a href="/html/website-design-north-wales.html" class="location-card"><h3>North Wales</h3><span>Web Design & SEO</span></a>
-          <a href="/html/website-design-anglesey.html" class="location-card"><h3>Anglesey</h3><span>Website Design</span></a>
-          <a href="/html/website-design-bangor.html" class="location-card"><h3>Bangor</h3><span>Website Development</span></a>
-          <a href="/html/website-design-wrexham.html" class="location-card"><h3>Wrexham</h3><span>Web Design & SEO</span></a>
-          <a href="/html/website-design-wales.html" class="location-card"><h3>Wales</h3><span>Digital Services</span></a>
-          <a href="/html/website-design-uk.html" class="location-card"><h3>United Kingdom</h3><span>Website Design</span></a>
-        </div>
-
-        <div class="carousel-controls">
-          <button type="button" class="carousel-control" data-prev aria-label="Previous location">‹</button>
-          <button type="button" class="carousel-control" data-next aria-label="Next location">›</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================
+    <!-- =========================================
          BLOG
-    ========================================= -->
+    ========================================== -->
     <section class="section blog-section" aria-labelledby="blog-title">
       <div class="container">
 
         <div class="section-heading split reveal">
+
           <div>
-            <span class="section-tag"><span class="tag-dot"></span> Our Blog</span>
-            <h2 id="blog-title">Website Design <span>& SEO Guides</span></h2>
-            <p>Website design, search optimisation and digital marketing advice.</p>
+            <span class="section-tag">
+              <span class="tag-dot"></span> Our Blog
+            </span>
+
+            <h2 id="blog-title">
+              Website Design <span>& SEO Guides</span>
+            </h2>
+
+            <p>
+              Website design, search optimisation and digital marketing advice.
+            </p>
           </div>
+
           <a href="/html/web-design-seo-blog.html" class="btn btn-dark">
             View all articles
           </a>
+
         </div>
 
         <div class="blog-grid mobile-carousel" data-carousel>
@@ -758,12 +683,16 @@
           <article class="blog-card reveal">
             <a href="/html/web-design-seo-blog-seo-aeo-geo-explained.html">
               <div class="blog-image">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=85" alt="Digital marketing analytics on a laptop" loading="lazy">
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=85"
+                  alt="Digital marketing analytics displayed on a laptop"
+                  loading="lazy"
+                >
               </div>
               <div class="blog-details">
                 <span>SEO · AEO · GEO</span>
                 <h3>SEO, AEO and GEO Explained for UK Businesses</h3>
-                <p>How search and AI-assisted discovery affect website visibility.</p>
+                <p>How traditional and AI-assisted search affect website visibility.</p>
               </div>
             </a>
           </article>
@@ -771,12 +700,16 @@
           <article class="blog-card reveal">
             <a href="/html/web-design-seo-blog-website-design-trends-2026.html">
               <div class="blog-image">
-                <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1000&q=85" alt="Website interface design workspace" loading="lazy">
+                <img
+                  src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1000&q=85"
+                  alt="Website interface design workspace"
+                  loading="lazy"
+                >
               </div>
               <div class="blog-details">
                 <span>WEBSITE DESIGN</span>
                 <h3>Website Design Trends in 2026</h3>
-                <p>Modern layouts, accessibility and website usability.</p>
+                <p>Modern website layouts, accessibility and usability.</p>
               </div>
             </a>
           </article>
@@ -784,7 +717,11 @@
           <article class="blog-card reveal">
             <a href="/html/web-design-seo-blog-website-redesign-checklist.html">
               <div class="blog-image">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85" alt="Website development workspace" loading="lazy">
+                <img
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85"
+                  alt="Website development workspace"
+                  loading="lazy"
+                >
               </div>
               <div class="blog-details">
                 <span>WEBSITE REDESIGN</span>
@@ -793,82 +730,106 @@
               </div>
             </a>
           </article>
+
         </div>
 
         <div class="carousel-controls">
           <button type="button" class="carousel-control" data-prev aria-label="Previous article">‹</button>
           <button type="button" class="carousel-control" data-next aria-label="Next article">›</button>
         </div>
+
       </div>
     </section>
 
-    <!-- ========================================
+    <!-- =========================================
          FAQ
-    ========================================= -->
+    ========================================== -->
     <section class="section faq-section" aria-labelledby="faq-title">
       <div class="container faq-layout">
 
         <div class="faq-sidebar reveal">
+
           <span class="section-tag section-tag-dark">
             <span class="tag-dot"></span> Frequently Asked Questions
           </span>
+
           <h2 id="faq-title">FAQ</h2>
+
           <div class="faq-contact">
             <h3>Have a question?</h3>
             <p>Contact us about website design, SEO or your digital project.</p>
+
             <a href="/html/contact-web-design-agency-wales.html" class="btn btn-primary">
               Contact us
             </a>
           </div>
+
         </div>
 
         <div class="faq-list">
 
           <details class="faq-item" open>
             <summary>What services does Clean Design UK offer?</summary>
-            <p>We offer website design, ecommerce development, branding, SEO, digital marketing, sales funnels, automation and GoHighLevel CRM support.</p>
+            <p>
+              We offer website design, ecommerce development, branding,
+              SEO, digital marketing, sales funnels, automation and
+              GoHighLevel CRM support.
+            </p>
           </details>
 
           <details class="faq-item">
             <summary>Do you work with businesses in North Wales?</summary>
-            <p>Yes. We work with businesses across Anglesey, Bangor, Gwynedd, Wrexham, Llandudno and other areas of North Wales.</p>
+            <p>
+              Yes. We work with businesses across Anglesey, Bangor,
+              Gwynedd, Wrexham, Llandudno and throughout North Wales.
+            </p>
           </details>
 
           <details class="faq-item">
-            <summary>Can you redesign an existing website?</summary>
-            <p>Yes. We can review and redesign existing business websites, including their design, content structure and functionality.</p>
+            <summary>Can you redesign my existing website?</summary>
+            <p>
+              Yes. We can review and redesign existing websites,
+              including their layout, content and functionality.
+            </p>
           </details>
 
           <details class="faq-item">
             <summary>Do you provide SEO with website design?</summary>
-            <p>Yes. We can incorporate technical SEO foundations, search-friendly content, metadata, internal linking and location targeting.</p>
+            <p>
+              Yes. We can incorporate technical SEO, metadata,
+              internal linking, structured content and location targeting.
+            </p>
           </details>
 
           <details class="faq-item">
             <summary>Do you design ecommerce websites?</summary>
-            <p>Yes. We build ecommerce websites with product pages, organised categories and purchasing journeys.</p>
+            <p>
+              Yes. We develop ecommerce websites with product pages,
+              organised categories and purchasing journeys.
+            </p>
           </details>
 
           <details class="faq-item">
             <summary>Do you support GoHighLevel CRM?</summary>
-            <p>Yes. We support GoHighLevel CRM, lead pipelines, automation workflows and sales funnels.</p>
+            <p>
+              Yes. We support GoHighLevel CRM, lead pipelines,
+              automation workflows and sales funnels.
+            </p>
           </details>
 
-          <details class="faq-item">
-            <summary>How can I request a website quotation?</summary>
-            <p>Complete either enquiry form or contact us directly. We will discuss your requirements and the next steps.</p>
-          </details>
         </div>
+
       </div>
     </section>
 
-    <!-- ========================================
+    <!-- =========================================
          FINAL CTA
-    ========================================= -->
+    ========================================== -->
     <section class="section final-cta" aria-labelledby="cta-title">
       <div class="container cta-layout">
 
         <div class="cta-content reveal">
+
           <span class="section-tag section-tag-dark">
             <span class="tag-dot"></span> Free Consultation
           </span>
@@ -879,23 +840,27 @@
           </h2>
 
           <p>
-            Tell us about your website, ecommerce, SEO
-            or digital marketing project.
-            We work with businesses across North Wales,
-            Wales and the UK.
+            Tell us about your website, ecommerce, SEO or digital
+            marketing project. We work with businesses throughout
+            North Wales, Wales and the UK.
           </p>
 
           <div class="cta-contact-details">
+
             <a href="mailto:jesse@cleandesignuk.com">
               jesse@cleandesignuk.com
             </a>
+
             <a href="https://wa.me/447367292269" target="_blank" rel="noopener noreferrer">
               WhatsApp: +44 7367 292269
             </a>
+
           </div>
+
         </div>
 
         <div class="cta-form-shell reveal">
+
           <h3>Request a Free Consultation</h3>
           <p>Complete the form and we'll get back to you.</p>
 
@@ -906,6 +871,7 @@
             data-lead-form
             novalidate
           >
+
             <input type="hidden" name="access_key" value="64b77c31-f500-4317-87f1-feb766e00ea7">
             <input type="hidden" name="subject" value="Homepage consultation - Clean Design UK">
             <input type="hidden" name="from_name" value="Clean Design UK Website">
@@ -913,24 +879,51 @@
 
             <div class="honeypot" aria-hidden="true">
               <label for="cta-botcheck">Leave blank</label>
-              <input id="cta-botcheck" type="text" name="botcheck" tabindex="-1" autocomplete="off">
+              <input
+                id="cta-botcheck"
+                type="text"
+                name="botcheck"
+                tabindex="-1"
+                autocomplete="off"
+              >
             </div>
 
             <div class="cta-form-grid">
 
               <div class="form-field">
                 <label for="cta-name">Full Name</label>
-                <input id="cta-name" type="text" name="name" placeholder="Your name" autocomplete="name" required>
+                <input
+                  id="cta-name"
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+                  autocomplete="name"
+                  required
+                >
               </div>
 
               <div class="form-field">
                 <label for="cta-email">Email Address</label>
-                <input id="cta-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                <input
+                  id="cta-email"
+                  type="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                >
               </div>
 
               <div class="form-field">
                 <label for="cta-phone">UK Phone Number</label>
-                <input id="cta-phone" type="tel" name="phone" placeholder="07..." autocomplete="tel" required>
+                <input
+                  id="cta-phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="07..."
+                  autocomplete="tel"
+                  required
+                >
               </div>
 
               <div class="form-field">
@@ -965,13 +958,18 @@
               <button type="submit" class="btn btn-primary full-width">
                 Send enquiry
               </button>
+
             </div>
 
             <p class="form-status" aria-live="polite"></p>
+
           </form>
+
         </div>
+
       </div>
     </section>
+
   </main>
 
   <!-- Shared components -->
@@ -982,5 +980,6 @@
   <script defer src="/js/index.js"></script>
   <script defer src="/js/forms.js"></script>
   <script defer src="/js/cookies.js"></script>
+
 </body>
 </html>

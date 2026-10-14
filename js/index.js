@@ -1,21 +1,24 @@
 
 /**
  * Clean Design UK
- * Homepage interactions
+ * Homepage JavaScript
  *
- * 1. Scroll reveal animations
- * 2. Horizontal card navigation on mobile
- * 3. FAQ accordion
+ * - Scroll reveal animations
+ * - Desktop portfolio stack spreading
+ * - Mobile portfolio swipe and arrows
+ * - Other mobile carousels
+ * - FAQ accordion
  */
 
 document.addEventListener("DOMContentLoaded", () => {
   initialiseRevealAnimations();
+  initialiseHeroGallery();
   initialiseCarousels();
   initialiseFAQ();
 });
 
 /* ============================================
-   SCROLL ANIMATIONS
+   SCROLL REVEALS
 ============================================ */
 
 function initialiseRevealAnimations() {
@@ -26,9 +29,7 @@ function initialiseRevealAnimations() {
   ).matches;
 
   if (reducedMotion || !("IntersectionObserver" in window)) {
-    elements.forEach(element => {
-      element.classList.add("is-visible");
-    });
+    elements.forEach(element => element.classList.add("is-visible"));
     return;
   }
 
@@ -42,18 +43,203 @@ function initialiseRevealAnimations() {
       });
     },
     {
-      threshold: 0.06,
+      threshold: 0.08,
       rootMargin: "0px 0px -20px 0px"
     }
   );
 
-  elements.forEach(element => {
-    observer.observe(element);
-  });
+  elements.forEach(element => observer.observe(element));
 }
 
 /* ============================================
-   MOBILE CAROUSELS
+   HERO GALLERY — DESKTOP SCROLL SPREAD
+============================================ */
+
+function initialiseHeroGallery() {
+  const gallery = document.querySelector("#heroGallery");
+  const track = document.querySelector("#heroGalleryTrack");
+
+  if (!gallery || !track) return;
+
+  const cards = Array.from(
+    track.querySelectorAll(".hero-gallery-card")
+  );
+
+  const previous = document.querySelector("#heroGalleryPrev");
+  const next = document.querySelector("#heroGalleryNext");
+
+  const mobileQuery = window.matchMedia("(max-width: 768px)");
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+
+  let frameRequested = false;
+
+  const clamp = (value, min, max) =>
+    Math.min(max, Math.max(min, value));
+
+  const interpolate = (start, end, progress) =>
+    start + (end - start) * progress;
+
+  function updateDesktopGallery() {
+    frameRequested = false;
+
+    if (mobileQuery.matches) {
+      cards.forEach(card => {
+        card.style.removeProperty("--gallery-x");
+        card.style.removeProperty("--gallery-y");
+        card.style.removeProperty("--gallery-rotation");
+        card.style.removeProperty("--gallery-scale");
+      });
+      return;
+    }
+
+    const rect = gallery.getBoundingClientRect();
+
+    /*
+      0 = cards fully stacked
+      1 = cards spread across the screen
+
+      Progress advances as the user scrolls
+      through the gallery section.
+    */
+    const scrollDistance = Math.max(
+      250,
+      rect.height - 490
+    );
+
+    const rawProgress = (
+      window.innerHeight * 0.72 - rect.top
+    ) / scrollDistance;
+
+    const progress = reducedMotion.matches
+      ? 1
+      : clamp(rawProgress, 0, 1);
+
+    /* Smooth easing */
+    const eased =
+      progress * progress * (3 - 2 * progress);
+
+    const spacing = Math.min(
+      275,
+      window.innerWidth * 0.17
+    );
+
+    const centre = (cards.length - 1) / 2;
+
+    cards.forEach((card, index) => {
+      const position = index - centre;
+      const distance = Math.abs(position);
+
+      /* Slightly visible edges in the stack */
+      const startingX = position * 42;
+      const endingX = position * spacing;
+
+      const startingY = distance * 22;
+      const endingY = distance * 13;
+
+      const startingRotation = position * 5;
+      const endingRotation = position * 3;
+
+      const startingScale = 1 - distance * 0.045;
+      const endingScale = 1;
+
+      const x = interpolate(startingX, endingX, eased);
+      const y = interpolate(startingY, endingY, eased);
+      const rotation = interpolate(
+        startingRotation,
+        endingRotation,
+        eased
+      );
+      const scale = interpolate(
+        startingScale,
+        endingScale,
+        eased
+      );
+
+      card.style.setProperty("--gallery-x", `${x}px`);
+      card.style.setProperty("--gallery-y", `${y}px`);
+      card.style.setProperty(
+        "--gallery-rotation",
+        `${rotation}deg`
+      );
+      card.style.setProperty("--gallery-scale", scale);
+    });
+  }
+
+  function requestGalleryUpdate() {
+    if (frameRequested) return;
+
+    frameRequested = true;
+    requestAnimationFrame(updateDesktopGallery);
+  }
+
+  /* ========================================
+     MOBILE SWIPE NAVIGATION
+  ======================================== */
+
+  function updateMobileButtons() {
+    if (!mobileQuery.matches) return;
+
+    const maximum = track.scrollWidth - track.clientWidth;
+
+    if (previous) {
+      previous.disabled = track.scrollLeft <= 2;
+    }
+
+    if (next) {
+      next.disabled = track.scrollLeft >= maximum - 2;
+    }
+  }
+
+  function moveGallery(direction) {
+    const card = cards[0];
+    if (!card) return;
+
+    const gap = parseFloat(
+      getComputedStyle(track).gap
+    ) || 17;
+
+    const width = card.getBoundingClientRect().width;
+
+    track.scrollBy({
+      left: direction * (width + gap),
+      behavior: reducedMotion.matches ? "instant" : "smooth"
+    });
+  }
+
+  previous?.addEventListener("click", () => {
+    moveGallery(-1);
+  });
+
+  next?.addEventListener("click", () => {
+    moveGallery(1);
+  });
+
+  track.addEventListener("scroll", updateMobileButtons, {
+    passive: true
+  });
+
+  window.addEventListener("scroll", requestGalleryUpdate, {
+    passive: true
+  });
+
+  window.addEventListener("resize", () => {
+    requestGalleryUpdate();
+    updateMobileButtons();
+  });
+
+  mobileQuery.addEventListener("change", () => {
+    requestGalleryUpdate();
+    updateMobileButtons();
+  });
+
+  updateDesktopGallery();
+  updateMobileButtons();
+}
+
+/* ============================================
+   OTHER MOBILE CAROUSELS
 ============================================ */
 
 function initialiseCarousels() {
@@ -70,20 +256,23 @@ function initialiseCarousels() {
     const next = controls.querySelector("[data-next]");
 
     function move(direction) {
-      const card = carousel.firstElementChild;
-      if (!card) return;
+      const firstCard = carousel.firstElementChild;
+      if (!firstCard) return;
 
-      const cardWidth = card.getBoundingClientRect().width;
-      const gap = parseFloat(getComputedStyle(carousel).gap) || 16;
+      const width = firstCard.getBoundingClientRect().width;
+      const gap = parseFloat(
+        getComputedStyle(carousel).gap
+      ) || 16;
 
       carousel.scrollBy({
-        left: direction * (cardWidth + gap),
+        left: direction * (width + gap),
         behavior: "smooth"
       });
     }
 
     function updateButtons() {
-      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      const maxScroll =
+        carousel.scrollWidth - carousel.clientWidth;
 
       if (previous) {
         previous.disabled = carousel.scrollLeft <= 2;

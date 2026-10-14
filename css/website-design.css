@@ -1,0 +1,2132 @@
+
+/* ============================================================
+   CLEAN DESIGN UK — WEBSITE DESIGN PAGE
+   File: /css/website-design.css
+   Global stylesheet: /css/styles.css
+============================================================ */
+
+body[data-page="website-design"] {
+  --wd-red: #ba0d17;
+  --wd-bright: #df1722;
+  --wd-black: #090b0b;
+  --wd-ink: #111414;
+  --wd-grey: #6d7376;
+  --wd-cream: #f5f4ef;
+  --wd-serif: "DM Serif Display", Georgia, serif;
+
+  font-family: "Inter", sans-serif;
+}
+
+body[data-page="website-design"] main {
+  overflow: clip;
+}
+
+body[data-page="website-design"] h1,
+body[data-page="website-design"] h2,
+body[data-page="website-design"] h3 {
+  font-family: "Manrope", sans-serif;
+}
+
+body[data-page="website-design"] .btn {
+  border-radius: 999px;
+}
+
+/* ============================================================
+   REUSABLE ELEMENTS
+============================================================ */
+
+.wd-dot,
+.wd-status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--wd-bright);
+}
+
+.wd-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.wd-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 9px 16px;
+  border-radius: 999px;
+
+  background: #fff;
+  color: #474044;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  box-shadow: 0 8px 25px rgba(25, 10, 25, .06);
+}
+
+.wd-section-heading {
+  max-width: 830px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.wd-section-heading h2 {
+  margin: 23px 0 16px;
+
+  color: var(--wd-ink);
+  font-size: clamp(33px, 3.8vw, 52px);
+  font-weight: 650;
+  line-height: 1.17;
+  letter-spacing: -.055em;
+}
+
+.wd-section-heading p {
+  max-width: 640px;
+  margin: 0 auto;
+
+  color: var(--wd-grey);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.wd-heading-light h2 {
+  color: #fff;
+}
+
+.wd-heading-light p {
+  color: #c8c1c6;
+}
+
+/* ============================================================
+   HERO — SEAMLESS WHITE IMAGE
+============================================================ */
+
+.wd-hero {
+  position: relative;
+  padding: 92px 0 100px;
+
+  background:
+    radial-gradient(
+      ellipse at 14% 65%,
+      rgba(186, 13, 23, .045),
+      transparent 46%
+    ),
+    #faf9f8;
+}
+
+.wd-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  align-items: center;
+  gap: clamp(35px, 6vw, 90px);
+}
+
+.wd-hero-visual {
+  position: relative;
+  min-width: 0;
+  padding-bottom: 23px;
+}
+
+/*
+  IMPORTANT:
+  The original WebP has a white background.
+  The container is also white so the image
+  no longer has the unwanted burgundy frame.
+*/
+
+.wd-hero-image-frame {
+  position: relative;
+  display: grid;
+  place-items: center;
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+
+  padding: 0;
+  overflow: hidden;
+
+  border-radius: 22px;
+  background: #fff;
+
+  box-shadow: 0 24px 54px rgba(28, 15, 26, .11);
+}
+
+.wd-hero-image-frame img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+
+  object-fit: contain;
+  object-position: center;
+
+  border-radius: inherit;
+}
+
+.wd-hero-image-caption {
+  position: absolute;
+  right: -9px;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 19px;
+  border-radius: 999px;
+
+  background: #fff;
+  color: #282127;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .09em;
+
+  box-shadow: 0 13px 30px rgba(0, 0, 0, .09);
+}
+
+.wd-hero-copy .wd-eyebrow {
+  color: #922631;
+}
+
+.wd-hero h1 {
+  margin: 24px 0;
+
+  color: #111016;
+  font-size: clamp(43px, 5vw, 72px);
+  font-weight: 650;
+  line-height: 1.1;
+  letter-spacing: -.065em;
+}
+
+.wd-hero h1 span {
+  display: block;
+  color: #a32935;
+}
+
+.wd-hero-copy p {
+  max-width: 660px;
+  margin-bottom: 17px;
+
+  color: #68646a;
+  font-size: 16px;
+  line-height: 1.82;
+}
+
+.wd-hero-copy .wd-hero-lead {
+  color: #252128;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.wd-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 27px;
+}
+
+.wd-btn-outline {
+  border: 1px solid #cfcacc;
+  background: #fff;
+  color: #181618;
+}
+
+.wd-btn-outline:hover {
+  background: #181618;
+  color: #fff;
+  border-color: #181618;
+}
+
+.wd-hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px 19px;
+  margin-top: 30px;
+}
+
+.wd-hero-highlights span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #656168;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.wd-hero-highlights span::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--wd-red);
+}
+
+/* ============================================================
+   WEBSITE DESIGN SERVICES — ANIMATED CARDS
+============================================================ */
+
+.wd-offer {
+  position: relative;
+  isolation: isolate;
+  padding: 103px 0 112px;
+
+  background:
+    radial-gradient(
+      ellipse at 72% 0%,
+      rgba(129, 36, 57, .25),
+      transparent 50%
+    ),
+    linear-gradient(145deg, #0c0a15, #090b0b);
+
+  color: #fff;
+}
+
+.wd-offer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.wd-offer-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  min-height: 310px;
+
+  padding: 29px 27px 30px;
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, .085);
+  border-radius: 20px;
+
+  background: linear-gradient(145deg, #211b22, #151317);
+  color: #fff;
+
+  transition:
+    transform .35s cubic-bezier(.2, .8, .2, 1),
+    background .35s,
+    box-shadow .35s;
+}
+
+.wd-offer-card:nth-child(2),
+.wd-offer-card:nth-child(5) {
+  background: linear-gradient(145deg, #2c1a23, #161218);
+}
+
+.wd-offer-card::before {
+  content: "";
+  position: absolute;
+
+  inset: auto -30% -90% -30%;
+  height: 160px;
+  border-radius: 50%;
+
+  background: rgba(186, 13, 23, .20);
+  filter: blur(45px);
+
+  pointer-events: none;
+  opacity: .38;
+
+  transition: transform .45s, opacity .45s;
+}
+
+.wd-offer-card:hover {
+  transform: translateY(-9px);
+
+  background: linear-gradient(145deg, #3a1e28, #1d151b);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, .24);
+}
+
+.wd-offer-card:hover::before {
+  opacity: .9;
+  transform: translateY(-20px);
+}
+
+.wd-offer-icon {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  place-items: center;
+
+  width: 67px;
+  height: 67px;
+  margin-bottom: 28px;
+
+  border-radius: 17px;
+  background: linear-gradient(145deg, #c52535, #70202b);
+  color: #fff;
+
+  box-shadow: 0 12px 25px rgba(186, 13, 23, .13);
+
+  transition: transform .4s, box-shadow .4s;
+}
+
+.wd-offer-card:hover .wd-offer-icon {
+  transform: translateY(-5px) rotate(-5deg);
+  box-shadow: 0 16px 30px rgba(186, 13, 23, .29);
+}
+
+.wd-offer-icon svg {
+  display: block;
+  width: 34px;
+  height: 34px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.wd-offer-card h3 {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 12px;
+
+  color: #fff;
+  font-size: 21px;
+  font-weight: 650;
+  letter-spacing: -.035em;
+  line-height: 1.35;
+}
+
+.wd-offer-card p {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 25px;
+
+  color: #c9c3c9;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.wd-card-line {
+  position: relative;
+  display: block;
+
+  width: 48px;
+  height: 3px;
+  margin-top: auto;
+
+  border-radius: 999px;
+  background: #ca3a4a;
+
+  transition: width .35s;
+}
+
+.wd-offer-card:hover .wd-card-line {
+  width: 100%;
+}
+
+/* ============================================================
+   PROFESSIONAL BUSINESS WEBSITES
+============================================================ */
+
+.wd-importance {
+  padding: 108px 0 115px;
+
+  background:
+    radial-gradient(
+      ellipse at 12% 30%,
+      rgba(100, 30, 46, .17),
+      transparent 46%
+    ),
+    #070708;
+
+  color: #fff;
+}
+
+.wd-importance-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(40px, 6vw, 90px);
+}
+
+.wd-importance-copy h2 {
+  margin: 24px 0 28px;
+
+  color: #fff;
+  font-family: var(--wd-serif);
+  font-size: clamp(53px, 6vw, 88px);
+  font-weight: 400;
+  letter-spacing: -.045em;
+  line-height: 1.03;
+}
+
+.wd-importance-copy h2 em {
+  display: block;
+  color: #ecd1d6;
+  font-family: var(--wd-serif);
+  font-weight: 400;
+}
+
+.wd-importance-copy p {
+  max-width: 550px;
+  margin-bottom: 18px;
+
+  color: #c2babe;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.wd-importance-copy .wd-importance-lead {
+  color: #f3e9eb;
+  font-size: 18px;
+}
+
+.wd-importance-copy .btn {
+  margin-top: 13px;
+}
+
+.wd-importance-visual {
+  position: relative;
+  min-width: 0;
+  padding-bottom: 32px;
+}
+
+/*
+  Rounded white portfolio image:
+  no dark frame behind the white WebP.
+*/
+
+.wd-importance-photo {
+  display: grid;
+  place-items: center;
+
+  width: 100%;
+  aspect-ratio: 1.12 / 1;
+  height: auto;
+
+  padding: 0;
+  overflow: hidden;
+
+  border-radius: 22px;
+  background: #fff;
+}
+
+.wd-importance-photo img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+
+  border-radius: inherit;
+}
+
+.wd-importance-floating {
+  position: absolute;
+  bottom: 0;
+  left: -16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  max-width: 85%;
+  padding: 19px 23px;
+
+  border: 1px solid rgba(255, 255, 255, .13);
+  border-radius: 16px;
+
+  background: #63212e;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, .25);
+}
+
+.wd-importance-floating > span {
+  color: #e7a9b0;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.wd-importance-floating strong {
+  color: #fff;
+  font-size: 17px;
+}
+
+.wd-importance-floating small {
+  color: #ead3d6;
+  font-size: 12px;
+}
+
+/* ============================================================
+   WEBSITE TYPES — BALANCED GRID
+============================================================ */
+
+.wd-types {
+  padding: 101px 0 112px;
+  background: #f5f4ef;
+}
+
+.wd-types-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+.wd-type-card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  overflow: hidden;
+
+  border-radius: 20px;
+  background: #fff;
+
+  box-shadow: 0 9px 30px rgba(32, 18, 25, .045);
+  transition: transform .3s, box-shadow .3s;
+}
+
+.wd-type-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 43px rgba(32, 18, 25, .10);
+}
+
+.wd-type-image {
+  display: grid;
+  place-items: center;
+
+  width: 100%;
+  height: 245px;
+  flex: none;
+
+  padding: 10px;
+  overflow: hidden;
+
+  background: #f4f1f2;
+}
+
+.wd-type-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+
+  border-radius: 16px;
+}
+
+.wd-type-small-business .wd-type-image {
+  padding: 8px;
+}
+
+.wd-type-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  padding: 25px 25px 29px;
+}
+
+.wd-type-body h3 {
+  margin: 0 0 13px;
+
+  color: #111;
+  font-size: 21px;
+  font-weight: 650;
+  letter-spacing: -.04em;
+  line-height: 1.4;
+}
+
+.wd-type-body p {
+  margin: 0;
+  color: #68646a;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Wide redesign card */
+
+.wd-type-wide {
+  grid-column: span 2;
+  flex-direction: row;
+  min-height: 290px;
+}
+
+.wd-type-wide .wd-type-body {
+  flex: 1.15;
+  justify-content: center;
+  padding: 31px;
+}
+
+.wd-type-overline {
+  display: block;
+  margin-bottom: 14px;
+
+  color: #a02a36;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.wd-type-wide .wd-type-image {
+  flex: 1;
+  width: auto;
+  height: auto;
+  min-height: 100%;
+  padding: 13px;
+}
+
+.wd-type-wide .wd-type-image img {
+  max-height: 275px;
+}
+
+.wd-text-link {
+  align-self: flex-start;
+  margin-top: 19px;
+
+  color: #9d2330;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.wd-text-link:hover {
+  color: #111;
+}
+
+/* ============================================================
+   SEO SECTION
+============================================================ */
+
+.wd-search {
+  padding: 105px 0;
+
+  background:
+    radial-gradient(
+      ellipse at 83% 13%,
+      rgba(168, 38, 54, .23),
+      transparent 48%
+    ),
+    linear-gradient(135deg, #27161e, #090b0b);
+
+  color: #fff;
+}
+
+.wd-search-layout {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: clamp(35px, 6vw, 88px);
+}
+
+.wd-search-copy h2 {
+  margin: 23px 0;
+
+  color: #fff;
+  font-size: clamp(40px, 4vw, 60px);
+  letter-spacing: -.055em;
+  line-height: 1.12;
+}
+
+.wd-search-copy h2 span {
+  display: block;
+  color: #eec4c9;
+}
+
+.wd-search-copy p {
+  margin-bottom: 19px;
+  color: #d3c6ca;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.wd-search-copy .btn {
+  margin-top: 15px;
+}
+
+.wd-search-points {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.wd-search-points article {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+
+  padding: 22px;
+  border-radius: 17px;
+  background: rgba(255, 255, 255, .075);
+
+  transition: transform .25s, background .25s;
+}
+
+.wd-search-points article:hover {
+  transform: translateX(5px);
+  background: rgba(186, 13, 23, .22);
+}
+
+.wd-search-check {
+  display: grid;
+  place-items: center;
+
+  width: 36px;
+  height: 36px;
+  flex: none;
+
+  border-radius: 50%;
+  background: #ac2634;
+  color: #fff;
+  font-weight: 700;
+}
+
+.wd-search-points h3 {
+  margin: 0 0 9px;
+  color: #fff;
+  font-size: 19px;
+  letter-spacing: -.035em;
+}
+
+.wd-search-points p {
+  margin: 0;
+  color: #cfc3c8;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* ============================================================
+   INTERACTIVE WEBSITE DESIGN PROCESS
+============================================================ */
+
+.wd-process {
+  padding: 104px 0 114px;
+  background: #f0eff0;
+}
+
+.wd-process-layout {
+  display: grid;
+  grid-template-columns: .82fr 1.18fr;
+  gap: 18px;
+  min-height: 465px;
+}
+
+.wd-process-navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 26px;
+  border-radius: 20px;
+  background: #0d0c13;
+}
+
+.wd-process-button {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+
+  width: 100%;
+  min-height: 80px;
+  padding: 17px 19px;
+
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .13);
+
+  background: transparent;
+  color: #fff;
+
+  font: 600 16px/1.45 "Manrope", sans-serif;
+  text-align: left;
+  cursor: pointer;
+
+  transition: background .25s;
+}
+
+.wd-process-button:last-child {
+  border-bottom: 0;
+}
+
+.wd-process-button:hover,
+.wd-process-button.is-active {
+  border-radius: 12px;
+  background: #ba0d17;
+}
+
+.wd-step-symbol {
+  display: grid;
+  place-items: center;
+
+  width: 36px;
+  height: 36px;
+  flex: none;
+
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .12);
+  font-size: 20px;
+}
+
+.wd-process-display {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  overflow: hidden;
+
+  border-radius: 20px;
+  background: #fff;
+}
+
+.wd-process-scene {
+  display: grid;
+  place-items: center;
+  flex: 1;
+
+  min-height: 280px;
+  padding: 35px;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(215, 65, 80, .19),
+      transparent 60%
+    ),
+    linear-gradient(135deg, #bad0d9, #f1d9d5);
+}
+
+.wd-process-window {
+  width: min(100%, 345px);
+  overflow: hidden;
+
+  border-radius: 17px;
+  background: #fff;
+
+  box-shadow: 0 18px 40px rgba(70, 30, 40, .17);
+
+  transform: rotate(-3deg);
+  transition: transform .3s;
+}
+
+.wd-process-display:hover .wd-process-window {
+  transform: rotate(0);
+}
+
+.wd-process-window-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 16px;
+  border-bottom: 1px solid #eee9eb;
+}
+
+.wd-process-window-bar span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d8d0d3;
+}
+
+.wd-process-window-bar span:first-child {
+  background: #dc4c5a;
+}
+
+.wd-process-window-bar small {
+  margin-left: 12px;
+  color: #79757a;
+  font-size: 10px;
+}
+
+.wd-process-window-content {
+  padding: 27px;
+}
+
+.wd-process-window-content > span {
+  color: #9c2632;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.wd-process-line {
+  height: 11px;
+  margin-top: 15px;
+  border-radius: 999px;
+  background: #eee6e9;
+}
+
+.wd-process-line.mid {
+  width: 78%;
+}
+
+.wd-process-line.short {
+  width: 50%;
+}
+
+.wd-process-progress {
+  width: 100%;
+  height: 8px;
+
+  margin-top: 28px;
+  overflow: hidden;
+
+  border-radius: 999px;
+  background: #f0e7e9;
+}
+
+.wd-process-progress > div {
+  width: 25%;
+  height: 100%;
+  border-radius: inherit;
+
+  background: #ba0d17;
+  transition: width .3s;
+}
+
+.wd-process-information {
+  padding: 28px 32px 34px;
+}
+
+.wd-process-information h3 {
+  margin: 0 0 12px;
+  color: #171717;
+  font-size: 24px;
+  letter-spacing: -.045em;
+}
+
+.wd-process-information p {
+  max-width: 620px;
+  margin: 0;
+  color: #6c666d;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* ============================================================
+   WEBSITE DESIGN PORTFOLIO
+============================================================ */
+
+.wd-portfolio {
+  padding: 103px 0 114px;
+  background: #faf9f8;
+}
+
+.wd-portfolio-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 33px;
+}
+
+.wd-portfolio-heading h2 {
+  margin: 18px 0 12px;
+  color: #111414;
+  font-size: clamp(32px, 3.6vw, 50px);
+  letter-spacing: -.055em;
+}
+
+.wd-portfolio-heading p {
+  margin: 0;
+  color: #6d7376;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.wd-portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 19px;
+}
+
+.wd-project-card {
+  min-width: 0;
+  overflow: hidden;
+
+  border-radius: 20px;
+  background: #fff;
+
+  box-shadow: 0 10px 30px rgba(25, 15, 25, .04);
+  transition: transform .3s, box-shadow .3s;
+}
+
+.wd-project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(25, 15, 25, .10);
+}
+
+.wd-project-link {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+
+  color: #151515;
+  text-decoration: none;
+}
+
+.wd-project-link:hover {
+  color: #151515;
+}
+
+.wd-project-image {
+  display: grid;
+  place-items: center;
+  flex: none;
+
+  width: 100%;
+  height: 265px;
+  padding: 16px;
+
+  overflow: hidden;
+  background: #fff;
+}
+
+.wd-project-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  border-radius: 17px;
+}
+
+.wd-project-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  min-width: 0;
+  padding: 20px 24px 27px;
+}
+
+.wd-project-content h3 {
+  margin: 0 0 13px;
+  color: #171717;
+  font-size: 22px;
+  letter-spacing: -.04em;
+}
+
+.wd-project-content p {
+  margin: 0;
+  color: #68646b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.wd-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-top: auto;
+  padding-top: 25px;
+}
+
+.wd-project-tags span {
+  display: inline-flex;
+  padding: 6px 11px;
+
+  border: 1px solid rgba(0, 0, 0, .18);
+  border-radius: 999px;
+
+  background: #fff;
+  color: #333;
+
+  font-size: 11px;
+  font-weight: 650;
+
+  transition:
+    background .2s,
+    color .2s,
+    border-color .2s;
+}
+
+.wd-project-tags span:hover {
+  border-color: #ba0d17;
+  background: #ba0d17;
+  color: #fff;
+}
+
+/* ============================================================
+   LOCATIONS WE SERVE
+============================================================ */
+
+.wd-locations {
+  padding: 93px 0;
+
+  background:
+    radial-gradient(
+      ellipse at 90% 20%,
+      rgba(186, 13, 23, .30),
+      transparent 47%
+    ),
+    linear-gradient(130deg, #26151c, #090b0b);
+
+  color: #fff;
+}
+
+.wd-locations-layout {
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  align-items: center;
+  gap: clamp(35px, 6vw, 90px);
+}
+
+.wd-locations h2 {
+  margin: 23px 0 20px;
+
+  color: #fff;
+  font-size: clamp(34px, 4vw, 56px);
+  letter-spacing: -.055em;
+  line-height: 1.17;
+}
+
+.wd-locations h2 em {
+  display: block;
+  margin-top: 7px;
+
+  color: #e8c7cc;
+  font-family: var(--wd-serif);
+  font-weight: 400;
+  letter-spacing: -.025em;
+}
+
+.wd-locations p {
+  margin-bottom: 17px;
+  color: #d1c7ca;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.wd-location-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 24px;
+}
+
+.wd-location-tags a {
+  padding: 10px 15px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: background .2s;
+}
+
+.wd-location-tags a:hover {
+  background: #ba0d17;
+  color: #fff;
+}
+
+/* ============================================================
+   WEBSITE DESIGN ADVICE
+============================================================ */
+
+.wd-guide {
+  padding: 100px 0 110px;
+  background: #f5f4ef;
+}
+
+.wd-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.wd-guide-card {
+  min-width: 0;
+  min-height: 250px;
+  padding: 33px 28px;
+
+  border-radius: 18px;
+  background: #fff;
+
+  box-shadow: 0 9px 27px rgba(30, 15, 25, .035);
+}
+
+.wd-guide-card h3 {
+  margin: 0 0 18px;
+
+  color: #151515;
+  font-size: 21px;
+  letter-spacing: -.04em;
+  line-height: 1.4;
+}
+
+.wd-guide-card p {
+  margin: 0;
+  color: #69666b;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* ============================================================
+   WEBSITE DESIGN FAQ
+============================================================ */
+
+.wd-faq {
+  padding: 105px 0;
+  background: #f2f0ee;
+}
+
+.wd-faq-layout {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  align-items: start;
+  gap: clamp(35px, 6vw, 90px);
+}
+
+.wd-faq-heading {
+  position: sticky;
+  top: 100px;
+}
+
+.wd-faq-heading h2 {
+  margin: 24px 0 20px;
+
+  color: #151515;
+  font-size: clamp(36px, 4vw, 57px);
+  letter-spacing: -.055em;
+  line-height: 1.17;
+}
+
+.wd-faq-heading p {
+  max-width: 420px;
+  margin-bottom: 25px;
+
+  color: #6b666b;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.wd-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.wd-faq-list details {
+  overflow: hidden;
+  border-radius: 15px;
+  background: #fff;
+}
+
+.wd-faq-list details[open] {
+  background: #f3e6e9;
+}
+
+.wd-faq-list summary {
+  position: relative;
+  padding: 22px 54px 22px 22px;
+
+  list-style: none;
+  color: #1a1719;
+
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.5;
+
+  cursor: pointer;
+}
+
+.wd-faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.wd-faq-list summary::after {
+  content: "+";
+  position: absolute;
+
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  color: #ba0d17;
+  font-size: 26px;
+}
+
+.wd-faq-list details[open] summary::after {
+  content: "−";
+}
+
+.wd-faq-list details p {
+  margin: 0;
+  padding: 0 22px 23px;
+
+  color: #665f66;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* ============================================================
+   FINAL CONSULTATION CTA
+============================================================ */
+
+.wd-final-cta {
+  padding: 100px 0;
+
+  background:
+    radial-gradient(
+      ellipse at 57% -20%,
+      rgba(238, 96, 75, .66),
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 5% 60%,
+      rgba(144, 35, 57, .59),
+      transparent 53%
+    ),
+    linear-gradient(130deg, #311a23, #090b0b);
+
+  color: #fff;
+}
+
+.wd-cta-layout {
+  display: grid;
+  grid-template-columns: 1fr .88fr;
+  align-items: center;
+  gap: clamp(35px, 6vw, 90px);
+}
+
+.wd-cta-copy h2 {
+  margin: 23px 0;
+
+  color: #fff;
+  font-size: clamp(40px, 4.7vw, 65px);
+  line-height: 1.16;
+  letter-spacing: -.055em;
+}
+
+.wd-cta-copy p {
+  max-width: 550px;
+  margin-bottom: 26px;
+
+  color: #e4d8dc;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.wd-cta-form-card {
+  padding: clamp(24px, 3vw, 42px);
+
+  border-radius: 22px;
+  background: #fff;
+  color: #151515;
+}
+
+.wd-cta-form-card h3 {
+  margin: 0 0 11px;
+
+  color: #171717;
+  font-size: 25px;
+  letter-spacing: -.04em;
+}
+
+.wd-cta-form-card > p {
+  margin-bottom: 25px;
+
+  color: #69646a;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.wd-lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.wd-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+
+.wd-form-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 8px;
+}
+
+.wd-form-field label {
+  color: #363035;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.wd-form-field input,
+.wd-form-field select {
+  width: 100%;
+  min-width: 0;
+  height: 51px;
+
+  padding: 0 15px;
+  border: 1px solid #e5e2e4;
+  border-radius: 11px;
+
+  outline: none;
+  background: #fafafa;
+  color: #151515;
+
+  font: 400 14px/1.4 "Inter", sans-serif;
+}
+
+.wd-form-field input:focus,
+.wd-form-field select:focus {
+  border-color: #ba0d17;
+  box-shadow: 0 0 0 3px rgba(186, 13, 23, .09);
+}
+
+.wd-form-field input::placeholder {
+  color: #8d8b90;
+}
+
+.wd-submit {
+  justify-content: center;
+  width: 100%;
+  min-height: 51px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.wd-submit:disabled {
+  opacity: .7;
+  cursor: wait;
+}
+
+.wd-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.wd-form-status {
+  margin: 0;
+  color: #951e2b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.wd-form-status:empty {
+  display: none;
+}
+
+.wd-form-status[data-state="success"] {
+  color: #176a39;
+}
+
+.wd-form-privacy {
+  margin: 0;
+  color: #777178;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.wd-form-privacy a {
+  color: #982631;
+  text-decoration: underline;
+}
+
+/* ============================================================
+   SCROLL ANIMATIONS
+============================================================ */
+
+[data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+.wd-animations-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(26px);
+
+  transition:
+    opacity .65s cubic-bezier(.2, .8, .2, 1),
+    transform .65s cubic-bezier(.2, .8, .2, 1);
+}
+
+.wd-animations-ready [data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wd-offer-card:nth-child(3n+2) {
+  transition-delay: .07s;
+}
+
+.wd-offer-card:nth-child(3n+3) {
+  transition-delay: .14s;
+}
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 1100px) {
+
+  .wd-hero-grid {
+    gap: 38px;
+  }
+
+  .wd-hero h1 {
+    font-size: clamp(43px, 5vw, 65px);
+  }
+
+  .wd-offer-grid,
+  .wd-types-grid,
+  .wd-portfolio-grid {
+    gap: 14px;
+  }
+
+  .wd-offer-card {
+    min-height: 325px;
+    padding: 25px 22px;
+  }
+
+}
+
+@media (max-width: 850px) {
+
+  .wd-hero-grid,
+  .wd-importance-layout,
+  .wd-search-layout,
+  .wd-process-layout,
+  .wd-locations-layout,
+  .wd-faq-layout,
+  .wd-cta-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .wd-hero {
+    padding: 65px 0;
+  }
+
+  .wd-hero-visual {
+    width: 100%;
+    max-width: 590px;
+    margin: 0 auto;
+  }
+
+  .wd-hero-image-frame {
+    aspect-ratio: 1 / 1;
+    height: auto;
+  }
+
+  .wd-offer-grid,
+  .wd-types-grid,
+  .wd-portfolio-grid,
+  .wd-guide-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wd-offer-card {
+    min-height: 290px;
+  }
+
+  .wd-type-wide {
+    grid-column: span 2;
+  }
+
+  .wd-importance-visual {
+    width: 100%;
+    max-width: 650px;
+    margin-inline: auto;
+  }
+
+  .wd-faq-heading {
+    position: static;
+  }
+
+}
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 650px) {
+
+  .wd-hero,
+  .wd-offer,
+  .wd-importance,
+  .wd-types,
+  .wd-search,
+  .wd-process,
+  .wd-portfolio,
+  .wd-locations,
+  .wd-guide,
+  .wd-faq,
+  .wd-final-cta {
+    padding-top: 72px;
+    padding-bottom: 74px;
+  }
+
+  .wd-section-heading {
+    margin-bottom: 31px;
+  }
+
+  .wd-section-heading h2 {
+    font-size: 33px;
+  }
+
+  .wd-section-heading p {
+    font-size: 15px;
+  }
+
+  /* HERO */
+
+  .wd-hero {
+    padding-top: 35px;
+  }
+
+  .wd-hero-image-frame {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+
+    padding: 0;
+    border-radius: 18px;
+    background: #fff;
+  }
+
+  .wd-hero-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: inherit;
+  }
+
+  .wd-hero-image-caption {
+    right: 0;
+    padding: 11px 14px;
+    font-size: 9px;
+  }
+
+  .wd-hero h1 {
+    font-size: clamp(38px, 9.5vw, 55px);
+  }
+
+  .wd-hero-copy p {
+    font-size: 15px;
+  }
+
+  .wd-hero-copy .wd-hero-lead {
+    font-size: 16px;
+  }
+
+  .wd-hero-highlights span {
+    font-size: 11px;
+  }
+
+  /* SERVICES */
+
+  .wd-offer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .wd-offer-card {
+    min-height: 305px;
+    padding: 19px 15px 21px;
+    border-radius: 15px;
+  }
+
+  .wd-offer-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 21px;
+    border-radius: 12px;
+  }
+
+  .wd-offer-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .wd-offer-card h3 {
+    font-size: 16px;
+  }
+
+  .wd-offer-card p {
+    margin-bottom: 20px;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  /* PROFESSIONAL BUSINESS WEBSITES */
+
+  .wd-importance-copy h2 {
+    font-size: clamp(47px, 12vw, 70px);
+  }
+
+  .wd-importance-copy p {
+    font-size: 15px;
+  }
+
+  .wd-importance-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.12 / 1;
+
+    padding: 0;
+    border-radius: 18px;
+    background: #fff;
+  }
+
+  .wd-importance-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: inherit;
+  }
+
+  .wd-importance-floating {
+    left: 5px;
+    padding: 14px 16px;
+  }
+
+  .wd-importance-floating strong {
+    font-size: 14px;
+  }
+
+  /* WEBSITE TYPES */
+
+  .wd-types-grid {
+    display: flex;
+    gap: 12px;
+
+    overflow-x: auto;
+    padding: 4px 2px 18px;
+
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .wd-types-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .wd-type-card,
+  .wd-type-wide {
+    flex: 0 0 min(82vw, 340px);
+    flex-direction: column;
+    min-height: 0;
+    scroll-snap-align: start;
+  }
+
+  .wd-type-image,
+  .wd-type-wide .wd-type-image {
+    width: 100%;
+    height: 205px;
+    min-height: 0;
+    flex: none;
+    padding: 8px;
+  }
+
+  .wd-type-image img,
+  .wd-type-wide .wd-type-image img {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: contain;
+  }
+
+  .wd-type-wide .wd-type-body,
+  .wd-type-body {
+    flex: 1;
+    padding: 22px;
+  }
+
+  .wd-type-body h3 {
+    font-size: 19px;
+  }
+
+  .wd-type-body p {
+    font-size: 14px;
+  }
+
+  /* SEO */
+
+  .wd-search-copy h2 {
+    font-size: 42px;
+  }
+
+  .wd-search-copy p {
+    font-size: 15px;
+  }
+
+  .wd-search-points article {
+    padding: 18px;
+  }
+
+  .wd-search-points h3 {
+    font-size: 17px;
+  }
+
+  .wd-search-points p {
+    font-size: 13px;
+  }
+
+  /* PROCESS */
+
+  .wd-process-navigation {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    padding: 12px;
+  }
+
+  .wd-process-button {
+    gap: 9px;
+    min-height: 73px;
+    padding: 11px;
+
+    border: 0;
+    border-radius: 10px;
+
+    font-size: 12px;
+  }
+
+  .wd-step-symbol {
+    width: 27px;
+    height: 27px;
+    font-size: 15px;
+  }
+
+  .wd-process-scene {
+    min-height: 230px;
+    padding: 20px;
+  }
+
+  .wd-process-information {
+    padding: 21px;
+  }
+
+  .wd-process-information h3 {
+    font-size: 20px;
+  }
+
+  .wd-process-information p {
+    font-size: 14px;
+  }
+
+  /* PORTFOLIO */
+
+  .wd-portfolio-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 19px;
+  }
+
+  .wd-portfolio-heading h2 {
+    font-size: 34px;
+  }
+
+  .wd-portfolio-grid {
+    display: flex;
+    gap: 13px;
+
+    overflow-x: auto;
+    padding: 4px 2px 17px;
+
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .wd-portfolio-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .wd-project-card {
+    flex: 0 0 min(82vw, 345px);
+    scroll-snap-align: start;
+  }
+
+  .wd-project-image {
+    height: 225px;
+  }
+
+  .wd-project-content {
+    padding: 18px 20px 23px;
+  }
+
+  .wd-project-content h3 {
+    font-size: 20px;
+  }
+
+  /* LOCATIONS */
+
+  .wd-locations h2 {
+    font-size: 36px;
+  }
+
+  .wd-locations p {
+    font-size: 15px;
+  }
+
+  /* GUIDE */
+
+  .wd-guide-grid {
+    display: flex;
+    gap: 13px;
+
+    overflow-x: auto;
+    padding: 4px 2px 17px;
+
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .wd-guide-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .wd-guide-card {
+    flex: 0 0 min(82vw, 340px);
+    min-height: 0;
+    scroll-snap-align: start;
+  }
+
+  /* FAQ */
+
+  .wd-faq-heading h2 {
+    font-size: 36px;
+  }
+
+  .wd-faq-heading p {
+    font-size: 15px;
+  }
+
+  .wd-faq-list summary {
+    padding: 19px 49px 19px 19px;
+    font-size: 15px;
+  }
+
+  .wd-faq-list details p {
+    padding: 0 19px 19px;
+    font-size: 14px;
+  }
+
+  /* CTA */
+
+  .wd-cta-copy h2 {
+    font-size: 39px;
+  }
+
+  .wd-cta-copy p {
+    font-size: 15px;
+  }
+
+  .wd-cta-form-card {
+    padding: 22px;
+  }
+
+  .wd-form-row {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* ============================================================
+   SMALL MOBILE
+============================================================ */
+
+@media (max-width: 390px) {
+
+  .wd-hero h1 {
+    font-size: 36px;
+  }
+
+  .wd-offer-card {
+    padding: 17px 12px;
+  }
+
+  .wd-offer-card h3 {
+    font-size: 15px;
+  }
+
+  .wd-offer-card p {
+    font-size: 11.5px;
+  }
+
+  .wd-cta-copy h2 {
+    font-size: 35px;
+  }
+
+}
+
+/* ============================================================
+   ACCESSIBILITY & REDUCED MOTION
+============================================================ */
+
+.wd-process-button:focus-visible,
+.wd-project-link:focus-visible,
+.wd-location-tags a:focus-visible,
+.wd-type-card a:focus-visible {
+  outline: 3px solid var(--wd-bright);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .wd-animations-ready [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .wd-offer-card,
+  .wd-offer-icon,
+  .wd-project-card,
+  .wd-type-card,
+  .wd-search-points article,
+  .wd-process-window {
+    transition: none;
+  }
+
+  .wd-offer-card:hover,
+  .wd-project-card:hover,
+  .wd-type-card:hover,
+  .wd-search-points article:hover,
+  .wd-process-display:hover .wd-process-window {
+    transform: none;
+  }
+
+}

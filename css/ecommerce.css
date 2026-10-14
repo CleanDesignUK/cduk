@@ -1,0 +1,2587 @@
+
+/* ============================================================
+   CLEAN DESIGN UK — ECOMMERCE PAGE
+   File: /css/ecommerce.css
+   Global stylesheet: /css/styles.css
+
+   DESIGN:
+   - Clean editorial layout
+   - Red, black and white branding
+   - Single square hero image
+   - Fully responsive
+   - Rounded imagery and pill buttons
+============================================================ */
+
+
+/* ============================================================
+   01. PAGE VARIABLES & RESET
+============================================================ */
+
+body[data-page="ecommerce"] {
+  --ec-red: #ba0d17;
+  --ec-red-dark: #6c181c;
+  --ec-red-bright: #df1722;
+
+  --ec-black: #090b0b;
+  --ec-ink: #111414;
+  --ec-grey: #6d7376;
+  --ec-cream: #f5f4ef;
+  --ec-white: #ffffff;
+
+  font-family: "Inter", sans-serif;
+  color: var(--ec-ink);
+}
+
+body[data-page="ecommerce"],
+body[data-page="ecommerce"] * {
+  box-sizing: border-box;
+}
+
+body[data-page="ecommerce"] main {
+  width: 100%;
+  max-width: 100%;
+  overflow: clip;
+}
+
+body[data-page="ecommerce"] main h1,
+body[data-page="ecommerce"] main h2,
+body[data-page="ecommerce"] main h3 {
+  font-family: "Manrope", sans-serif;
+}
+
+body[data-page="ecommerce"] main p {
+  line-height: 1.75;
+}
+
+body[data-page="ecommerce"] main img {
+  display: block;
+  max-width: 100%;
+}
+
+body[data-page="ecommerce"] .ec-container {
+  position: relative;
+
+  width: min(1220px, calc(100% - 64px));
+  max-width: 1220px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.ec-section {
+  padding: 105px 0;
+}
+
+
+/* ============================================================
+   02. SHARED PAGE ELEMENTS
+============================================================ */
+
+.ec-star {
+  display: inline-block;
+  flex: 0 0 auto;
+
+  width: 10px;
+  height: 10px;
+
+  background: var(--ec-red-bright);
+
+  clip-path: polygon(
+    0 0,
+    50% 20%,
+    100% 0,
+    80% 50%,
+    100% 100%,
+    50% 80%,
+    0 100%,
+    20% 50%
+  );
+}
+
+.ec-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+
+  margin: 0;
+
+  color: #464646;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.ec-label-light {
+  color: #ffffff;
+}
+
+.ec-section-heading {
+  max-width: 840px;
+  margin: 0 auto 52px;
+
+  text-align: center;
+}
+
+.ec-section-heading h2 {
+  margin: 20px 0 17px;
+
+  color: var(--ec-ink);
+
+  font-size: clamp(35px, 3.9vw, 53px);
+  font-weight: 650;
+  letter-spacing: -0.055em;
+  line-height: 1.17;
+}
+
+.ec-section-heading > p:not(.ec-label) {
+  max-width: 660px;
+  margin: 0 auto;
+
+  color: #646464;
+  font-size: 16px;
+}
+
+.ec-heading-light h2 {
+  color: #ffffff;
+}
+
+.ec-heading-light > p:not(.ec-label) {
+  color: #c9c2c9;
+}
+
+
+/* ============================================================
+   03. BUTTONS
+============================================================ */
+
+.ec-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+  padding: 12px 23px;
+
+  border: 1px solid transparent;
+  border-radius: 999px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.ec-button:hover {
+  transform: translateY(-2px);
+}
+
+.ec-button-red {
+  background: var(--ec-red);
+  color: #ffffff;
+}
+
+.ec-button-red:hover {
+  background: #e01b25;
+  color: #ffffff;
+}
+
+.ec-button-dark {
+  background: #101010;
+  color: #ffffff;
+}
+
+.ec-button-dark:hover {
+  background: var(--ec-red);
+  color: #ffffff;
+}
+
+.ec-button-outline {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: transparent;
+  color: #ffffff;
+}
+
+.ec-button-outline:hover {
+  border-color: #ffffff;
+  background: #ffffff;
+  color: #111111;
+}
+
+
+/* ============================================================
+   04. HERO — SINGLE SQUARE IMAGE
+============================================================ */
+
+.ec-hero {
+  position: relative;
+  isolation: isolate;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 650px;
+
+  padding: 90px 0 100px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 20% 30%,
+      rgba(90, 97, 106, 0.23),
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 83% 70%,
+      rgba(117, 22, 35, 0.31),
+      transparent 46%
+    ),
+    linear-gradient(
+      135deg,
+      #121519 0%,
+      #090b0b 52%,
+      #1e1015 100%
+    );
+
+  color: #ffffff;
+}
+
+.ec-hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 65% 20%,
+      rgba(255, 255, 255, 0.075),
+      transparent 36%
+    );
+}
+
+
+/* HERO GRID */
+
+.ec-hero-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(0, 0.9fr);
+
+  align-items: center;
+
+  width: 100%;
+  gap: clamp(45px, 5vw, 80px);
+}
+
+
+/* HERO TEXT */
+
+.ec-hero-copy {
+  width: 100%;
+  min-width: 0;
+  max-width: 650px;
+}
+
+.ec-hero-copy .ec-label {
+  margin-bottom: 25px;
+}
+
+.ec-hero h1 {
+  margin: 0 0 28px;
+
+  color: #ffffff;
+
+  font-size: clamp(47px, 5.15vw, 74px);
+  font-weight: 750;
+  letter-spacing: -0.065em;
+  line-height: 1.09;
+
+  overflow-wrap: normal;
+}
+
+.ec-hero h1 span {
+  display: block;
+  color: #e5dddf;
+}
+
+.ec-hero-lead {
+  max-width: 555px;
+  margin: 0 0 17px;
+
+  color: #ffffff;
+
+  font-size: clamp(17px, 1.6vw, 20px);
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.ec-hero-description {
+  max-width: 545px;
+  margin: 0 0 28px;
+
+  color: #c9c6c9;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* HERO ACTIONS */
+
+.ec-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+  margin-top: 29px;
+}
+
+.ec-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 9px;
+  margin-top: 29px;
+}
+
+.ec-hero-tags span {
+  padding: 8px 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.055);
+  color: #d8d2d5;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   SINGLE SQUARE HERO IMAGE
+============================================================ */
+
+.ec-hero-visual {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-width: 0;
+  max-width: 480px;
+
+  height: auto;
+  margin: 0 auto;
+}
+
+
+/*
+  Hide the left and right images on ALL screens.
+  Only the middle image will be visible.
+*/
+
+.ec-hero-visual .ec-photo-left,
+.ec-hero-visual .ec-photo-right {
+  display: none !important;
+}
+
+
+/* MAIN IMAGE */
+
+.ec-hero-visual .ec-photo-main {
+  position: relative;
+
+  display: block;
+  flex: none;
+
+  width: 100%;
+  height: auto;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+  border-radius: 22px;
+
+  background: #221b1e;
+
+  box-shadow:
+    0 24px 65px rgba(0, 0, 0, 0.28);
+
+  transform: none;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.ec-hero-visual .ec-photo-main img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: inherit;
+}
+
+
+/* SUBTLE HOVER */
+
+.ec-hero-visual .ec-photo-main:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 35px 75px rgba(0, 0, 0, 0.36);
+}
+
+
+/* SUBTLE DECORATIVE BACKGROUND */
+
+.ec-hero-visual::before {
+  content: "";
+
+  position: absolute;
+  z-index: -1;
+
+  width: 88%;
+  height: 88%;
+
+  border-radius: 50%;
+
+  background: rgba(145, 33, 46, 0.18);
+  filter: blur(75px);
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   05. INTRODUCTION
+============================================================ */
+
+.ec-intro {
+  background: #f0f0f0;
+}
+
+.ec-intro-grid {
+  display: grid;
+  grid-template-columns: 0.34fr 1fr;
+
+  align-items: start;
+  gap: 65px;
+}
+
+.ec-side-label {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+  padding-top: 13px;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.ec-intro-main {
+  min-width: 0;
+}
+
+.ec-intro-main h2 {
+  max-width: 790px;
+  margin: 0 0 26px;
+
+  color: #121212;
+
+  font-size: clamp(34px, 3.8vw, 52px);
+  font-weight: 600;
+  letter-spacing: -0.057em;
+  line-height: 1.2;
+}
+
+.ec-intro-main > p {
+  max-width: 780px;
+  margin: 0 0 17px;
+
+  color: #5e5e5e;
+  font-size: 16px;
+}
+
+.ec-intro-main > .ec-button {
+  margin-top: 19px;
+}
+
+.ec-intro-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 16px;
+  margin-top: 45px;
+}
+
+.ec-intro-card {
+  min-width: 0;
+  padding: 28px;
+
+  border-radius: 19px;
+  background: #ffffff;
+}
+
+.ec-intro-card-soft {
+  background: #e8dfe1;
+}
+
+.ec-mini-symbol {
+  display: block;
+  margin-bottom: 20px;
+
+  color: var(--ec-red);
+  font-size: 29px;
+}
+
+.ec-intro-card h3 {
+  margin: 0 0 12px;
+
+  font-size: 19px;
+  font-weight: 650;
+  letter-spacing: -0.035em;
+}
+
+.ec-intro-card p {
+  margin: 0;
+
+  color: #656565;
+  font-size: 14px;
+}
+
+
+/* ============================================================
+   06. HORIZONTAL MARQUEE
+============================================================ */
+
+.ec-marquee {
+  width: 100%;
+  padding: 21px 0;
+
+  overflow: hidden;
+
+  background: var(--ec-red);
+  color: #ffffff;
+}
+
+.ec-marquee-track {
+  display: flex;
+  align-items: center;
+
+  gap: 35px;
+  width: max-content;
+
+  animation: ec-marquee-scroll 38s linear infinite;
+}
+
+.ec-marquee-track span {
+  white-space: nowrap;
+
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+}
+
+.ec-marquee-track i {
+  flex: none;
+
+  width: 8px;
+  height: 8px;
+
+  background: #ffffff;
+  transform: rotate(45deg);
+}
+
+
+/* ============================================================
+   07. ECOMMERCE SERVICES
+============================================================ */
+
+.ec-services {
+  background: var(--ec-cream);
+}
+
+.ec-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 0 33px;
+}
+
+.ec-service-card {
+  min-width: 0;
+  padding: 30px 4px 36px;
+
+  border-bottom: 1px solid #d5d0cf;
+
+  transition: transform 0.3s ease;
+}
+
+.ec-service-card:nth-last-child(-n+3) {
+  border-bottom: none;
+}
+
+.ec-service-card:hover {
+  transform: translateY(-5px);
+}
+
+.ec-service-icon,
+.ec-shopify-service-icon {
+  display: grid;
+  place-items: center;
+
+  width: 65px;
+  height: 65px;
+  margin-bottom: 27px;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(135deg, #ce2732, #7b1c25);
+
+  color: #ffffff;
+
+  font-size: 30px;
+  font-weight: 500;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.ec-service-card:hover .ec-service-icon,
+.ec-service-card:hover .ec-shopify-service-icon {
+  transform: rotate(-5deg);
+  background: #171717;
+}
+
+.ec-shopify-service-icon {
+  background: #ffffff;
+}
+
+.ec-shopify-service-icon img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.ec-service-card h3 {
+  margin: 0 0 13px;
+
+  color: #171717;
+
+  font-size: 21px;
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  line-height: 1.35;
+}
+
+.ec-service-card p {
+  max-width: 350px;
+  margin: 0;
+
+  color: #696969;
+  font-size: 15px;
+}
+
+
+/* ============================================================
+   08. FEATURED ECOMMERCE DESIGN
+============================================================ */
+
+.ec-feature {
+  background: #ffffff;
+}
+
+.ec-feature-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+
+  align-items: center;
+  gap: clamp(40px, 6vw, 90px);
+}
+
+.ec-feature-image {
+  width: 100%;
+  min-width: 0;
+  height: 505px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+  background: #e9e1e3;
+}
+
+.ec-feature-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: inherit;
+}
+
+.ec-feature-copy h2 {
+  margin: 22px 0 27px;
+
+  color: #121212;
+
+  font-size: clamp(39px, 4.5vw, 61px);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 1.14;
+}
+
+.ec-feature-copy > p:not(.ec-label) {
+  margin: 0 0 19px;
+
+  color: #62616a;
+  font-size: 16px;
+}
+
+.ec-feature-copy .ec-feature-lead {
+  color: #242124;
+
+  font-size: 18px;
+  font-weight: 550;
+}
+
+.ec-feature-copy .ec-button {
+  margin-top: 15px;
+}
+
+
+/* ============================================================
+   09. ECOMMERCE PLATFORMS
+============================================================ */
+
+.ec-platforms {
+  background: #edebeb;
+}
+
+.ec-platform-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 19px;
+}
+
+.ec-platform-card {
+  min-width: 0;
+
+  overflow: hidden;
+  border-radius: 21px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.ec-platform-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 20px 40px rgba(25, 15, 25, 0.08);
+}
+
+.ec-platform-header {
+  min-height: 236px;
+  padding: 34px;
+}
+
+.ec-shopify-header {
+  background:
+    linear-gradient(135deg, #f3f1ec, #e3ead7);
+}
+
+.ec-other-header {
+  background:
+    linear-gradient(135deg, #35222a, #141418);
+
+  color: #ffffff;
+}
+
+.ec-shopify-logo {
+  display: grid;
+  place-items: center;
+
+  width: 70px;
+  height: 70px;
+
+  margin-bottom: 19px;
+
+  border-radius: 17px;
+  background: #ffffff;
+}
+
+.ec-shopify-logo img {
+  width: 49px;
+  height: 49px;
+
+  object-fit: contain;
+}
+
+.ec-platform-symbol {
+  display: grid;
+  place-items: center;
+
+  width: 70px;
+  height: 70px;
+
+  margin-bottom: 19px;
+
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.12);
+
+  color: #ffffff;
+  font-size: 37px;
+}
+
+.ec-platform-header h3 {
+  margin: 0 0 9px;
+
+  color: inherit;
+
+  font-size: 26px;
+  letter-spacing: -0.045em;
+}
+
+.ec-platform-header p {
+  margin: 0;
+
+  color: inherit;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.ec-platform-body {
+  padding: 30px 34px 36px;
+}
+
+.ec-platform-body > p {
+  margin: 0 0 21px;
+
+  color: #626262;
+  font-size: 15px;
+}
+
+.ec-platform-body ul {
+  display: grid;
+  gap: 13px;
+
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+.ec-platform-body li {
+  position: relative;
+  padding-left: 23px;
+
+  color: #353535;
+
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.ec-platform-body li::before {
+  content: "";
+
+  position: absolute;
+  top: 8px;
+  left: 0;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+  background: var(--ec-red);
+}
+
+.ec-platform-note {
+  max-width: 720px;
+  margin: 24px auto 0;
+
+  color: #686868;
+  font-size: 13px;
+
+  text-align: center;
+}
+
+
+/* ============================================================
+   10. ECOMMERCE FEATURES
+============================================================ */
+
+.ec-features {
+  background:
+    radial-gradient(
+      ellipse at 60% 0,
+      rgba(112, 27, 40, 0.19),
+      transparent 50%
+    ),
+    #080719;
+
+  color: #ffffff;
+}
+
+.ec-feature-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.ec-feature-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  gap: 44px;
+
+  min-width: 0;
+  min-height: 285px;
+
+  padding: 29px;
+
+  overflow: hidden;
+  border-radius: 20px;
+
+  background:
+    linear-gradient(145deg, #221d27, #121119);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.ec-feature-item:hover {
+  transform: translateY(-6px);
+
+  background:
+    linear-gradient(145deg, #52232d, #20151c);
+}
+
+.ec-feature-index {
+  color: #d9c2c7;
+
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.ec-feature-item h3 {
+  margin: 0 0 13px;
+
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.3;
+}
+
+.ec-feature-item p {
+  margin: 0;
+
+  color: #c6bec5;
+  font-size: 14px;
+}
+
+
+/* ============================================================
+   11. ECOMMERCE SEO
+============================================================ */
+
+.ec-seo {
+  background: var(--ec-cream);
+}
+
+.ec-seo-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+
+  align-items: center;
+  gap: 55px;
+}
+
+.ec-seo-copy h2 {
+  margin: 22px 0;
+
+  font-size: clamp(40px, 4vw, 58px);
+  font-weight: 650;
+  letter-spacing: -0.06em;
+  line-height: 1.13;
+}
+
+.ec-seo-copy h2 span {
+  display: block;
+  color: #9e2831;
+}
+
+.ec-seo-copy > p:not(.ec-label) {
+  margin: 0 0 18px;
+
+  color: #626262;
+  font-size: 15px;
+}
+
+.ec-seo-copy .ec-button {
+  margin-top: 15px;
+}
+
+.ec-seo-bento {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 13px;
+}
+
+.ec-seo-card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  padding: 24px;
+
+  border-radius: 19px;
+  background: #ffffff;
+}
+
+.ec-seo-card-main {
+  grid-row: span 2;
+}
+
+.ec-seo-card h3 {
+  margin: 19px 0 10px;
+
+  color: #181818;
+
+  font-size: 20px;
+  letter-spacing: -0.04em;
+}
+
+.ec-seo-card p {
+  margin: 0;
+
+  color: #686868;
+  font-size: 14px;
+}
+
+.ec-seo-illustration {
+  display: grid;
+  place-content: center;
+
+  flex: 1;
+  min-height: 240px;
+  padding: 20px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(135deg, #ecdfe2, #cfa6ae);
+}
+
+.ec-fake-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 0;
+  padding: 13px;
+
+  border-radius: 10px;
+  background: #ffffff;
+
+  color: #777777;
+  font-size: 12px;
+
+  box-shadow:
+    0 12px 23px rgba(50, 20, 30, 0.09);
+}
+
+.ec-search-glass {
+  width: 13px;
+  height: 13px;
+
+  border: 2px solid var(--ec-red);
+  border-radius: 50%;
+}
+
+.ec-fake-results {
+  display: grid;
+  gap: 10px;
+
+  margin-top: 16px;
+}
+
+.ec-fake-results i {
+  height: 10px;
+
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.ec-fake-results i:nth-child(2) {
+  width: 70%;
+}
+
+.ec-fake-results i:nth-child(3) {
+  width: 85%;
+}
+
+.ec-bars {
+  display: flex;
+  align-items: flex-end;
+
+  gap: 10px;
+  height: 80px;
+}
+
+.ec-bars i {
+  flex: 1;
+  height: 30%;
+
+  border-radius: 7px 7px 0 0;
+  background: #e5d0d4;
+}
+
+.ec-bars i:nth-child(2) {
+  height: 52%;
+}
+
+.ec-bars i:nth-child(3) {
+  height: 84%;
+  background: var(--ec-red);
+}
+
+.ec-bars i:nth-child(4) {
+  height: 68%;
+}
+
+.ec-bars i:nth-child(5) {
+  height: 100%;
+}
+
+.ec-ai-mark {
+  display: grid;
+  place-items: center;
+
+  width: 73px;
+  height: 73px;
+
+  border-radius: 18px;
+  background: #f3e1e5;
+
+  color: var(--ec-red);
+  font-size: 47px;
+}
+
+
+/* ============================================================
+   12. ECOMMERCE PROCESS
+============================================================ */
+
+.ec-process {
+  background: #efeeee;
+}
+
+.ec-process-layout {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+
+  gap: 17px;
+  min-height: 450px;
+}
+
+.ec-process-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 23px;
+
+  border-radius: 20px;
+  background: #0c0c14;
+}
+
+.ec-process-button {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  width: 100%;
+  min-height: 80px;
+  padding: 17px 19px;
+
+  border: 0;
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.14);
+
+  background: transparent;
+  color: #ffffff;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.45;
+
+  text-align: left;
+  cursor: pointer;
+}
+
+.ec-process-button:last-child {
+  border-bottom: 0;
+}
+
+.ec-process-button span {
+  color: #c6bec4;
+
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.ec-process-button.active,
+.ec-process-button:hover {
+  border-radius: 12px;
+  background: var(--ec-red);
+}
+
+.ec-process-display {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  overflow: hidden;
+
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.ec-process-preview {
+  position: relative;
+  flex: 1;
+
+  min-height: 280px;
+  padding: 25px;
+
+  overflow: hidden;
+  background: #e7dfe2;
+}
+
+.ec-process-preview > img {
+  width: 100%;
+  height: 100%;
+
+  min-height: 230px;
+  max-height: 335px;
+
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.ec-process-progress {
+  position: absolute;
+
+  right: 45px;
+  bottom: 45px;
+  left: 45px;
+
+  height: 9px;
+
+  overflow: hidden;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.ec-process-progress > span {
+  display: block;
+
+  width: 25%;
+  height: 100%;
+
+  border-radius: inherit;
+  background: var(--ec-red);
+
+  transition: width 0.35s ease;
+}
+
+.ec-process-description {
+  padding: 25px 30px 30px;
+}
+
+.ec-process-description > span {
+  color: #a22834;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.ec-process-description h3 {
+  margin: 9px 0 12px;
+
+  color: #111111;
+
+  font-size: 23px;
+  letter-spacing: -0.04em;
+}
+
+.ec-process-description p {
+  margin: 0;
+
+  color: #696569;
+  font-size: 15px;
+}
+
+
+/* ============================================================
+   13. LOCATION COVERAGE
+============================================================ */
+
+.ec-locations {
+  background:
+    radial-gradient(
+      ellipse at 80% 10%,
+      rgba(174, 39, 52, 0.25),
+      transparent 46%
+    ),
+    linear-gradient(130deg, #24151d, #090b0b);
+
+  color: #ffffff;
+}
+
+.ec-location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+  gap: 75px;
+}
+
+.ec-location-copy h2 {
+  margin: 22px 0;
+
+  color: #ffffff;
+
+  font-size: clamp(36px, 4vw, 57px);
+  font-weight: 650;
+  letter-spacing: -0.055em;
+  line-height: 1.15;
+}
+
+.ec-location-copy h2 span {
+  display: block;
+  color: #ebc2ca;
+}
+
+.ec-location-copy > p:not(.ec-label),
+.ec-location-details > p {
+  margin: 0 0 18px;
+
+  color: #d2c7cc;
+  font-size: 15px;
+}
+
+.ec-location-details h3 {
+  margin: 0 0 20px;
+
+  color: #ffffff;
+
+  font-size: 23px;
+  letter-spacing: -0.035em;
+}
+
+.ec-location-pills {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 9px;
+  margin-top: 26px;
+}
+
+.ec-location-pills span {
+  padding: 10px 14px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 650;
+}
+
+
+/* ============================================================
+   14. ECOMMERCE GUIDES
+============================================================ */
+
+.ec-guides {
+  background: var(--ec-cream);
+}
+
+.ec-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 17px;
+}
+
+.ec-guide-card {
+  min-width: 0;
+  padding: 32px 27px;
+
+  border-radius: 19px;
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 28px rgba(20, 15, 20, 0.035);
+}
+
+.ec-guide-card h3 {
+  margin: 0 0 17px;
+
+  color: #161616;
+
+  font-size: 21px;
+  letter-spacing: -0.035em;
+}
+
+.ec-guide-card p {
+  margin: 0;
+
+  color: #696969;
+  font-size: 15px;
+}
+
+
+/* ============================================================
+   15. FAQ
+============================================================ */
+
+.ec-faq {
+  background: #eeeceb;
+}
+
+.ec-faq-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+
+  align-items: start;
+  gap: 70px;
+}
+
+.ec-faq-heading {
+  position: sticky;
+  top: 110px;
+}
+
+.ec-faq-heading h2 {
+  margin: 22px 0;
+
+  color: #171717;
+
+  font-size: clamp(36px, 4vw, 57px);
+  letter-spacing: -0.055em;
+  line-height: 1.15;
+}
+
+.ec-faq-heading > p:not(.ec-label) {
+  margin: 0 0 25px;
+
+  color: #696569;
+  font-size: 16px;
+}
+
+.ec-faq-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.ec-faq-list details {
+  overflow: hidden;
+
+  border-radius: 15px;
+  background: #ffffff;
+}
+
+.ec-faq-list details[open] {
+  background: #f5e7e9;
+}
+
+.ec-faq-list summary {
+  position: relative;
+
+  padding: 21px 54px 21px 22px;
+
+  list-style: none;
+  color: #171717;
+
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.5;
+
+  cursor: pointer;
+}
+
+.ec-faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.ec-faq-list summary::after {
+  content: "+";
+
+  position: absolute;
+  right: 22px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: var(--ec-red);
+
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.ec-faq-list details[open] summary::after {
+  content: "−";
+}
+
+.ec-faq-list details p {
+  margin: 0;
+  padding: 0 22px 22px;
+
+  color: #665f64;
+  font-size: 15px;
+}
+
+
+/* ============================================================
+   16. FINAL CTA
+============================================================ */
+
+.ec-final {
+  padding: 105px 0;
+
+  background:
+    radial-gradient(
+      ellipse at 55% -15%,
+      rgba(221, 91, 75, 0.55),
+      transparent 47%
+    ),
+    radial-gradient(
+      ellipse at 10% 75%,
+      rgba(132, 31, 49, 0.55),
+      transparent 52%
+    ),
+    linear-gradient(135deg, #291a23, #090b0b);
+
+  color: #ffffff;
+}
+
+.ec-final-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.92fr;
+
+  align-items: center;
+  gap: 70px;
+}
+
+.ec-final-copy h2 {
+  margin: 23px 0;
+
+  color: #ffffff;
+
+  font-size: clamp(39px, 4.7vw, 65px);
+  font-weight: 650;
+  letter-spacing: -0.06em;
+  line-height: 1.14;
+}
+
+.ec-final-copy > p:not(.ec-label) {
+  max-width: 550px;
+  margin: 0 0 18px;
+
+  color: #e2d5d8;
+  font-size: 16px;
+}
+
+.ec-final-copy .ec-button {
+  margin-top: 18px;
+}
+
+
+/* ============================================================
+   17. CONTACT FORM
+============================================================ */
+
+.ec-form-card {
+  min-width: 0;
+  padding: 38px;
+
+  border-radius: 21px;
+
+  background: #ffffff;
+  color: #111111;
+}
+
+.ec-form-card h3 {
+  margin: 0 0 10px;
+
+  color: #171717;
+
+  font-size: 25px;
+  letter-spacing: -0.04em;
+}
+
+.ec-form-card > p {
+  margin: 0 0 25px;
+
+  color: #6a6568;
+  font-size: 14px;
+}
+
+#ecContactForm {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+.ec-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 13px;
+}
+
+.ec-field {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  gap: 8px;
+}
+
+.ec-field label {
+  color: #312e30;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ec-field input,
+.ec-field select {
+  width: 100%;
+  min-width: 0;
+  height: 51px;
+
+  padding: 0 14px;
+
+  border: 1px solid #e5e1e3;
+  border-radius: 11px;
+
+  outline: none;
+
+  background: #fafafa;
+  color: #171717;
+
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+}
+
+.ec-field input:focus,
+.ec-field select:focus {
+  border-color: var(--ec-red);
+
+  box-shadow:
+    0 0 0 3px rgba(186, 13, 23, 0.09);
+}
+
+.ec-field input::placeholder {
+  color: #8e898d;
+}
+
+.ec-form-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 51px;
+  padding: 13px 20px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: var(--ec-red);
+  color: #ffffff;
+
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: background 0.25s ease;
+}
+
+.ec-form-submit:hover {
+  background: #141414;
+}
+
+.ec-form-submit:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.ec-form-status {
+  margin: 0;
+
+  color: #a12633;
+  font-size: 13px;
+}
+
+.ec-form-status:empty {
+  display: none;
+}
+
+.ec-form-status[data-state="success"] {
+  color: #176a39;
+}
+
+.ec-form-privacy {
+  margin: 0;
+
+  color: #777777;
+  font-size: 11px;
+
+  text-align: center;
+}
+
+.ec-form-privacy a {
+  color: #a12633;
+  text-decoration: underline;
+}
+
+.ec-honeypot {
+  position: absolute;
+  left: -9999px;
+
+  width: 1px;
+  height: 1px;
+
+  overflow: hidden;
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   18. SCROLL ANIMATIONS
+============================================================ */
+
+.ec-reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.ec-animations-ready .ec-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+.ec-animations-ready .ec-reveal.ec-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ============================================================
+   19. ANIMATION KEYFRAMES
+============================================================ */
+
+@keyframes ec-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* ============================================================
+   20. RESPONSIVE — TABLET
+============================================================ */
+
+@media (max-width: 1050px) {
+
+  .ec-hero-grid {
+    gap: 35px;
+  }
+
+  .ec-hero h1 {
+    font-size: clamp(43px, 5.6vw, 64px);
+  }
+
+  .ec-hero-visual {
+    max-width: 410px;
+  }
+
+  .ec-intro-grid {
+    grid-template-columns: 0.28fr 1fr;
+    gap: 37px;
+  }
+
+  .ec-feature-grid,
+  .ec-seo-grid,
+  .ec-location-grid,
+  .ec-final-grid {
+    gap: 40px;
+  }
+
+  .ec-faq-grid {
+    gap: 35px;
+  }
+
+}
+
+
+/* ============================================================
+   21. RESPONSIVE — SMALL TABLET
+============================================================ */
+
+@media (max-width: 850px) {
+
+  .ec-hero-grid,
+  .ec-intro-grid,
+  .ec-feature-grid,
+  .ec-seo-grid,
+  .ec-process-layout,
+  .ec-location-grid,
+  .ec-faq-grid,
+  .ec-final-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ec-hero {
+    min-height: 0;
+    padding: 80px 0;
+  }
+
+  .ec-hero-copy {
+    max-width: 680px;
+    margin-inline: auto;
+
+    text-align: center;
+  }
+
+  .ec-hero-copy .ec-label {
+    justify-content: center;
+  }
+
+  .ec-hero-lead,
+  .ec-hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ec-hero-actions,
+  .ec-hero-tags {
+    justify-content: center;
+  }
+
+  .ec-hero-visual {
+    max-width: 470px;
+    margin-inline: auto;
+  }
+
+  .ec-service-grid,
+  .ec-feature-list,
+  .ec-guide-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .ec-service-card:nth-last-child(-n+3) {
+    border-bottom: 1px solid #d5d0cf;
+  }
+
+  .ec-service-card:nth-last-child(-n+2) {
+    border-bottom: 0;
+  }
+
+  .ec-feature-image {
+    height: 410px;
+  }
+
+  .ec-faq-heading {
+    position: static;
+  }
+
+}
+
+
+/* ============================================================
+   22. RESPONSIVE — MOBILE
+============================================================ */
+
+@media (max-width: 650px) {
+
+  /* PAGE CONTAINER */
+
+  body[data-page="ecommerce"] .ec-container {
+    width: calc(100% - 40px);
+    max-width: none;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .ec-section,
+  .ec-final {
+    padding-top: 70px;
+    padding-bottom: 72px;
+  }
+
+  .ec-section-heading {
+    margin-bottom: 34px;
+  }
+
+  .ec-section-heading h2 {
+    font-size: 33px;
+  }
+
+  .ec-section-heading > p:not(.ec-label) {
+    font-size: 15px;
+  }
+
+
+  /* =========================
+     MOBILE HERO
+  ========================= */
+
+  .ec-hero {
+    min-height: 0;
+    padding: 65px 0 60px;
+  }
+
+  .ec-hero-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 36px;
+  }
+
+  .ec-hero-copy {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+  .ec-hero-copy .ec-label {
+    justify-content: center;
+
+    gap: 8px;
+    margin-bottom: 23px;
+
+    font-size: 9px;
+    letter-spacing: 0.055em;
+  }
+
+  .ec-hero h1 {
+    margin: 0 0 22px;
+
+    font-size: clamp(39px, 9.6vw, 56px);
+    letter-spacing: -0.065em;
+    line-height: 1.12;
+
+    text-align: center;
+  }
+
+  .ec-hero h1 span {
+    display: block;
+  }
+
+  .ec-hero-lead {
+    max-width: 440px;
+    margin: 0 auto 14px;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.6;
+
+    text-align: center;
+  }
+
+  .ec-hero-description {
+    max-width: 450px;
+    margin: 0 auto 25px;
+
+    font-size: 14px;
+    line-height: 1.75;
+
+    text-align: center;
+  }
+
+  .ec-hero-actions {
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 24px;
+  }
+
+  .ec-hero-actions .ec-button {
+    min-height: 45px;
+    padding: 12px 17px;
+
+    font-size: 12px;
+  }
+
+  .ec-hero-tags {
+    justify-content: center;
+    gap: 7px;
+
+    margin-top: 24px;
+  }
+
+  .ec-hero-tags span {
+    padding: 7px 10px;
+    font-size: 10px;
+  }
+
+
+  /* =========================
+     MOBILE SQUARE IMAGE
+  ========================= */
+
+  .ec-hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+
+    margin: 0 auto;
+  }
+
+  .ec-hero-visual .ec-photo-left,
+  .ec-hero-visual .ec-photo-right {
+    display: none !important;
+  }
+
+  .ec-hero-visual .ec-photo-main {
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 1 / 1;
+
+    margin: 0;
+
+    transform: none;
+    border-radius: 19px;
+  }
+
+  .ec-hero-visual .ec-photo-main img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .ec-hero-visual .ec-photo-main:hover {
+    transform: none;
+  }
+
+
+  /* =========================
+     INTRODUCTION
+  ========================= */
+
+  .ec-intro-grid {
+    gap: 25px;
+  }
+
+  .ec-intro-main h2 {
+    font-size: 34px;
+  }
+
+  .ec-intro-main > p {
+    font-size: 15px;
+  }
+
+  .ec-intro-cards {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+    margin-top: 31px;
+  }
+
+  .ec-intro-card {
+    padding: 18px;
+  }
+
+  .ec-mini-symbol {
+    margin-bottom: 18px;
+    font-size: 24px;
+  }
+
+  .ec-intro-card h3 {
+    font-size: 16px;
+  }
+
+  .ec-intro-card p {
+    font-size: 12px;
+  }
+
+
+  /* =========================
+     SERVICES
+  ========================= */
+
+  .ec-service-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 0 15px;
+  }
+
+  .ec-service-card {
+    padding: 24px 0 27px;
+  }
+
+  .ec-service-icon,
+  .ec-shopify-service-icon {
+    width: 50px;
+    height: 50px;
+
+    margin-bottom: 20px;
+
+    border-radius: 13px;
+    font-size: 24px;
+  }
+
+  .ec-shopify-service-icon img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .ec-service-card h3 {
+    font-size: 16px;
+  }
+
+  .ec-service-card p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+
+  /* =========================
+     FEATURED IMAGE
+  ========================= */
+
+  .ec-feature-image {
+    height: 320px;
+    border-radius: 17px;
+  }
+
+  .ec-feature-copy h2 {
+    font-size: 37px;
+  }
+
+  .ec-feature-copy > p:not(.ec-label) {
+    font-size: 15px;
+  }
+
+
+  /* =========================
+     ECOMMERCE PLATFORMS
+  ========================= */
+
+  .ec-platform-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .ec-platform-header {
+    min-height: 200px;
+    padding: 26px;
+  }
+
+  .ec-platform-body {
+    padding: 25px;
+  }
+
+  .ec-platform-header h3 {
+    font-size: 23px;
+  }
+
+  .ec-platform-body > p {
+    font-size: 14px;
+  }
+
+
+  /* =========================
+     FEATURES SWIPE
+  ========================= */
+
+  .ec-feature-list {
+    display: flex;
+    gap: 12px;
+
+    overflow-x: auto;
+
+    padding: 3px 2px 17px;
+
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ec-feature-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ec-feature-item {
+    flex: 0 0 min(82vw, 340px);
+    min-height: 270px;
+
+    scroll-snap-align: start;
+  }
+
+
+  /* =========================
+     ECOMMERCE SEO
+  ========================= */
+
+  .ec-seo-copy h2 {
+    font-size: 38px;
+  }
+
+  .ec-seo-copy > p:not(.ec-label) {
+    font-size: 15px;
+  }
+
+  .ec-seo-bento {
+    gap: 10px;
+  }
+
+  .ec-seo-card {
+    padding: 17px;
+  }
+
+  .ec-seo-card-main {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+
+  .ec-seo-illustration {
+    min-height: 200px;
+  }
+
+  .ec-seo-card h3 {
+    font-size: 17px;
+  }
+
+  .ec-seo-card p {
+    font-size: 12px;
+  }
+
+
+  /* =========================
+     DEVELOPMENT PROCESS
+  ========================= */
+
+  .ec-process-menu {
+    display: grid;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+    padding: 12px;
+  }
+
+  .ec-process-button {
+    min-height: 74px;
+
+    gap: 8px;
+    padding: 11px;
+
+    border: 0;
+    border-radius: 10px;
+
+    font-size: 12px;
+  }
+
+  .ec-process-preview {
+    min-height: 235px;
+    padding: 17px;
+  }
+
+  .ec-process-preview > img {
+    min-height: 210px;
+    max-height: 250px;
+  }
+
+  .ec-process-progress {
+    right: 35px;
+    bottom: 35px;
+    left: 35px;
+  }
+
+  .ec-process-description {
+    padding: 22px;
+  }
+
+  .ec-process-description h3 {
+    font-size: 20px;
+  }
+
+  .ec-process-description p {
+    font-size: 14px;
+  }
+
+
+  /* =========================
+     LOCATIONS
+  ========================= */
+
+  .ec-location-copy h2 {
+    font-size: 37px;
+  }
+
+  .ec-location-copy > p:not(.ec-label),
+  .ec-location-details > p {
+    font-size: 15px;
+  }
+
+
+  /* =========================
+     GUIDES SWIPE
+  ========================= */
+
+  .ec-guide-grid {
+    display: flex;
+    gap: 12px;
+
+    overflow-x: auto;
+
+    padding: 3px 2px 17px;
+
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ec-guide-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ec-guide-card {
+    flex: 0 0 min(82vw, 340px);
+    scroll-snap-align: start;
+  }
+
+
+  /* =========================
+     FAQ
+  ========================= */
+
+  .ec-faq-heading h2 {
+    font-size: 36px;
+  }
+
+  .ec-faq-heading > p:not(.ec-label) {
+    font-size: 15px;
+  }
+
+  .ec-faq-list summary {
+    padding: 19px 49px 19px 19px;
+    font-size: 15px;
+  }
+
+  .ec-faq-list details p {
+    padding: 0 19px 20px;
+    font-size: 14px;
+  }
+
+
+  /* =========================
+     FINAL CTA
+  ========================= */
+
+  .ec-final-copy h2 {
+    font-size: 38px;
+  }
+
+  .ec-final-copy > p:not(.ec-label) {
+    font-size: 15px;
+  }
+
+  .ec-form-card {
+    padding: 23px;
+  }
+
+  .ec-form-row {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ============================================================
+   23. VERY SMALL PHONES
+============================================================ */
+
+@media (max-width: 390px) {
+
+  body[data-page="ecommerce"] .ec-container {
+    width: calc(100% - 32px);
+  }
+
+  .ec-hero {
+    padding: 55px 0;
+  }
+
+  .ec-hero h1 {
+    font-size: 37px;
+  }
+
+  .ec-hero-copy .ec-label {
+    font-size: 8px;
+  }
+
+  .ec-hero-actions {
+    gap: 8px;
+  }
+
+  .ec-hero-actions .ec-button {
+    padding: 11px 13px;
+    font-size: 11px;
+  }
+
+  .ec-hero-visual {
+    width: 100%;
+  }
+
+  .ec-intro-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .ec-service-card h3 {
+    font-size: 15px;
+  }
+
+  .ec-service-card p {
+    font-size: 11.5px;
+  }
+
+  .ec-final-copy h2 {
+    font-size: 35px;
+  }
+
+}
+
+
+/* ============================================================
+   24. ACCESSIBILITY
+============================================================ */
+
+.ec-button:focus-visible,
+.ec-process-button:focus-visible,
+.ec-form-submit:focus-visible,
+.ec-field input:focus-visible,
+.ec-field select:focus-visible,
+.ec-faq-list summary:focus-visible {
+  outline: 3px solid var(--ec-red-bright);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ec-marquee-track {
+    animation: none;
+  }
+
+  .ec-animations-ready .ec-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .ec-button,
+  .ec-hero-photo,
+  .ec-service-card,
+  .ec-feature-item,
+  .ec-platform-card {
+    transition: none;
+  }
+
+  .ec-button:hover,
+  .ec-hero-photo:hover,
+  .ec-service-card:hover,
+  .ec-feature-item:hover,
+  .ec-platform-card:hover {
+    transform: none;
+  }
+
+}

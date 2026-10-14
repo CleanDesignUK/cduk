@@ -835,3 +835,414 @@ p {
     transition-duration: .01ms !important;
   }
 }
+
+
+/* ==================================================
+   CLEAN DESIGN UK — GLOBAL FLOATING WHATSAPP
+   Used across all pages
+================================================== */
+
+.floating-whatsapp {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 950;
+
+  display: grid;
+  place-items: center;
+
+  width: 57px;
+  height: 57px;
+
+  padding: 14px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #25d366;
+  color: #ffffff;
+
+  box-shadow:
+    0 9px 30px rgba(0, 0, 0, 0.18),
+    0 3px 8px rgba(0, 0, 0, 0.08);
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-5px);
+  background: #1fb957;
+  color: #ffffff;
+
+  box-shadow: 0 15px 35px rgba(0,0,0,0.23);
+}
+
+.floating-whatsapp:focus-visible {
+  outline: 3px solid #090909;
+  outline-offset: 4px;
+}
+
+.floating-whatsapp svg {
+  display: block;
+  width: 29px;
+  height: 29px;
+  flex: none;
+  fill: currentColor;
+}
+
+.floating-whatsapp-tooltip {
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 13px);
+
+  width: max-content;
+
+  padding: 9px 14px;
+
+  border-radius: 999px;
+  background: #101010;
+  color: #ffffff;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translate(7px,-50%);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.floating-whatsapp:hover .floating-whatsapp-tooltip,
+.floating-whatsapp:focus-visible .floating-whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0,-50%);
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+  .floating-whatsapp {
+    right: 17px;
+    bottom: 17px;
+
+    width: 52px;
+    height: 52px;
+
+    padding: 12px;
+  }
+
+  .floating-whatsapp svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .floating-whatsapp-tooltip {
+    display: none;
+  }
+}
+
+/* iPhones with a bottom safe area */
+
+@supports (bottom: env(safe-area-inset-bottom)) {
+
+  .floating-whatsapp {
+    bottom: calc(20px + env(safe-area-inset-bottom));
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .floating-whatsapp,
+  .floating-whatsapp-tooltip {
+    transition: none;
+  }
+
+}
+
+/* =====================================================
+   CLEAN DESIGN UK — GLOBAL TESTIMONIALS
+   Shared across Homepage and About
+   File: /css/styles.css
+===================================================== */
+
+.cduk-reviews {
+  padding: 100px 0 95px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 50% 65%,
+      rgba(186,13,23,.045),
+      transparent 65%
+    ),
+    #fcfafb;
+}
+
+.cduk-reviews-heading {
+  max-width: 780px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.cduk-reviews-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px 6px 6px;
+  border-radius: 999px;
+  background: #fff;
+  color: #5f5a60;
+  box-shadow: 0 7px 24px rgba(30,10,30,.07);
+  font-family: "Inter",sans-serif;
+  font-size: 13px;
+}
+
+.cduk-reviews-label-icon {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#df1722,#6c181c);
+  color: #fff;
+  font-size: 13px;
+}
+
+.cduk-reviews-heading h2 {
+  margin: 25px 0 13px;
+  color: #111414;
+  font-family: "Manrope",sans-serif;
+  font-size: clamp(34px,4vw,54px);
+  font-weight: 650;
+  letter-spacing: -.055em;
+  line-height: 1.17;
+}
+
+.cduk-reviews-heading p {
+  max-width: 550px;
+  margin: 0 auto;
+  color: #6d7376;
+  font-family: "Inter",sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.cduk-reviews-heading .btn {
+  display: inline-flex;
+  margin-top: 22px;
+  border-radius: 999px;
+}
+
+.cduk-reviews-track {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 15px max(22px,calc((100% - 1250px)/2)) 30px;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 22px;
+  overscroll-behavior-x: contain;
+
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cduk-reviews-track::-webkit-scrollbar {
+  display: none;
+}
+
+.cduk-reviews-track:focus-visible {
+  outline: 2px solid #ba0d17;
+  outline-offset: -2px;
+}
+
+.cduk-review-card {
+  display: flex;
+  flex: 0 0 390px;
+  flex-direction: column;
+  min-height: 285px;
+  padding: 29px;
+  border: 1px solid #ede7ea;
+  border-radius: 14px;
+  background: #fff;
+  color: #191919;
+  box-shadow: 0 12px 32px rgba(50,20,60,.065);
+  scroll-snap-align: start;
+  transition: transform .3s,box-shadow .3s;
+}
+
+.cduk-review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 42px rgba(50,20,60,.11);
+}
+
+.cduk-review-stars {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 24px;
+  color: #171717;
+  font-family: "Inter",sans-serif;
+  font-size: 15px;
+}
+
+.cduk-review-stars span:last-child {
+  color: #ffb33f;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.cduk-review-card blockquote {
+  flex: 1;
+  margin: 0 0 25px;
+  color: #625e63;
+  font-family: "Inter",sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.cduk-review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cduk-review-avatar {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  flex: none;
+  border-radius: 10px;
+  background: #f4dde1;
+  color: #921b26;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.cduk-review-author > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cduk-review-author strong {
+  color: #222;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.cduk-review-author small {
+  color: #8b858c;
+  font-size: 12px;
+}
+
+.cduk-review-quote-mark {
+  align-self: end;
+  margin-left: auto;
+  color: #ba0d17;
+  font: 700 67px/.7 Georgia,serif;
+}
+
+.cduk-review-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.cduk-review-controls button {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: 1px solid #e9e4e7;
+  border-radius: 50%;
+  background: #fff;
+  color: #ba0d17;
+  font: 400 29px/1 Arial,sans-serif;
+  cursor: pointer;
+  transition: background .2s,color .2s;
+}
+
+.cduk-review-controls button:hover:not(:disabled) {
+  background: #ba0d17;
+  color: #fff;
+}
+
+.cduk-review-controls button:disabled {
+  opacity: .38;
+  cursor: default;
+}
+
+@media (max-width: 650px) {
+  .cduk-reviews {
+    padding: 75px 0;
+  }
+
+  .cduk-reviews-heading {
+    margin-bottom: 30px;
+  }
+
+  .cduk-reviews-heading h2 {
+    font-size: 35px;
+  }
+
+  .cduk-reviews-heading p {
+    font-size: 15px;
+  }
+
+  .cduk-reviews-track {
+    gap: 14px;
+    padding: 12px 20px 26px;
+  }
+
+  .cduk-review-card {
+    flex-basis: min(84vw,350px);
+    min-height: 290px;
+    padding: 23px;
+  }
+
+  .cduk-review-card blockquote {
+    font-size: 14px;
+  }
+
+  .cduk-review-stars span:last-child {
+    font-size: 20px;
+  }
+
+  .cduk-review-controls button {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cduk-review-card,
+  .cduk-review-controls button {
+    transition: none;
+  }
+
+  .cduk-review-card:hover {
+    transform: none;
+  }
+}
