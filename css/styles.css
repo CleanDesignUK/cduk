@@ -1246,3 +1246,20 @@ p {
     transform: none;
   }
 }
+
+
+/* ==========================================
+   GLOBAL NAVBAR
+========================================== */
+
+#site-navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+#site-navbar .site-header {
+  position: relative;
+  width: 100%;
+}
