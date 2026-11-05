@@ -1,0 +1,869 @@
+
+/* ==========================================================
+   CLEAN DESIGN UK
+   INDUSTRY-FOCUSED BLOG ARTICLES
+
+   /css/blog-industry.css
+
+   Load after:
+   /css/styles.css
+   /css/blog.css
+
+   Only affects .industry-blog
+   Global navbar and footer remain untouched.
+========================================================== */
+
+.industry-blog {
+  --industry-red: #ba0d17;
+  --industry-bright: #df1722;
+  --industry-black: #090b0b;
+  --industry-ink: #111414;
+  --industry-cream: #f5f4ef;
+  --industry-muted: #68666a;
+}
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.industry-blog .industry-hero {
+  position: relative;
+  isolation: isolate;
+  padding-top: clamp(65px, 7vw, 105px);
+  padding-bottom: clamp(45px, 6vw, 75px);
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 92% 8%,
+      rgba(186,13,23,.1),
+      transparent 37%
+    ),
+    linear-gradient(
+      150deg,
+      #f7f6f3 0%,
+      #f2eeec 100%
+    );
+}
+
+.industry-blog .industry-hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 90px;
+  right: -145px;
+  width: 340px;
+  height: 340px;
+  border: 1px solid rgba(186,13,23,.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.industry-blog .journal-post-heading {
+  max-width: 1100px;
+}
+
+.industry-blog .journal-post-heading h1 {
+  max-width: 1090px;
+  margin-top: 25px;
+  margin-bottom: 28px;
+  color: #111414;
+  font-size: clamp(42px, 5.4vw, 76px);
+  font-weight: 800;
+  letter-spacing: -.075em;
+  line-height: 1.11;
+  overflow-wrap: break-word;
+}
+
+.industry-blog .journal-post-lead {
+  max-width: 780px;
+  color: #595357;
+  font-size: clamp(17px, 1.5vw, 20px) !important;
+  line-height: 1.75 !important;
+}
+
+.industry-blog .industry-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px 26px;
+  margin-top: 30px;
+}
+
+.industry-blog .industry-inline-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #af3d49;
+  color: #862332;
+  font-size: 14px;
+  font-weight: 800;
+  transition:
+    color .25s ease,
+    border-color .25s ease;
+}
+
+.industry-blog .industry-inline-link:hover {
+  color: #df1722;
+  border-color: #df1722;
+}
+
+.industry-blog .industry-feature-image {
+  position: relative;
+  height: clamp(330px, 39vw, 530px);
+  margin-top: 55px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #c9c2bb;
+}
+
+.industry-blog .industry-feature-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 44%;
+  filter: saturate(.85);
+}
+
+.industry-blog .industry-feature-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 72%,
+    rgba(0,0,0,.16)
+  );
+  pointer-events: none;
+}
+
+/* ==========================================================
+   ARTICLE BODY
+========================================================== */
+
+.industry-blog .journal-post-main {
+  padding-top: clamp(65px, 8vw, 105px);
+}
+
+.industry-blog .journal-post-body {
+  min-width: 0;
+}
+
+.industry-blog .journal-post-body > p,
+.industry-blog .journal-post-body > ul,
+.industry-blog .journal-post-body > ol {
+  font-size: 16px;
+}
+
+.industry-blog .journal-post-body > p {
+  line-height: 1.9;
+}
+
+.industry-blog .journal-post-body > h2 {
+  margin-top: 58px;
+  margin-bottom: 21px;
+  font-size: clamp(29px, 3.1vw, 40px);
+  line-height: 1.2;
+}
+
+.industry-blog .journal-post-body > h3 {
+  margin-top: 34px;
+  margin-bottom: 15px;
+  font-size: clamp(21px, 2vw, 25px);
+  line-height: 1.3;
+}
+
+.industry-blog .journal-post-body a:not(.journal-btn):hover {
+  color: #df1722;
+}
+
+/* ==========================================================
+   INTRO ANSWER
+========================================================== */
+
+.industry-blog .journal-answer {
+  position: relative;
+  padding: clamp(25px, 3.5vw, 37px);
+  border: 1px solid #e7ccd1;
+  border-radius: 16px;
+  background:
+    linear-gradient(
+      125deg,
+      #fbf2f3,
+      #f7f4f2
+    );
+}
+
+.industry-blog .journal-answer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 70px;
+  height: 3px;
+  background: #ba0d17;
+}
+
+.industry-blog .journal-answer h2 {
+  max-width: 740px;
+  color: #161616;
+  font-size: clamp(25px, 2.7vw, 33px);
+  line-height: 1.25;
+}
+
+.industry-blog .journal-answer p {
+  max-width: 740px;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+/* ==========================================================
+   SIDEBAR CTA
+========================================================== */
+
+.industry-blog .industry-sidebar {
+  padding: 22px;
+}
+
+.industry-blog .industry-side-cta {
+  position: relative;
+  margin-top: 25px;
+  padding: 24px;
+  overflow: hidden;
+  border-radius: 14px;
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(215,43,61,.5),
+      transparent 55%
+    ),
+    #1b1115;
+  color: #fff;
+}
+
+.industry-blog .industry-side-cta > span {
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 17px;
+  color: #f7c9d1;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  line-height: 1.5;
+}
+
+.industry-blog .industry-side-cta h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 13px;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -.05em;
+  line-height: 1.25;
+}
+
+.industry-blog .industry-side-cta p {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 23px;
+  color: #e8dbe0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.industry-blog .industry-side-cta a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  min-height: 44px;
+  padding: 11px 14px;
+  border-radius: 999px;
+  background: #fff;
+  color: #111 !important;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background .25s ease,
+    transform .25s ease;
+}
+
+.industry-blog .industry-side-cta a:hover {
+  transform: translateY(-2px);
+  background: #f4e1e5;
+}
+
+/* ==========================================================
+   EMPHASIS PANEL
+========================================================== */
+
+.industry-blog .industry-emphasis {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 230px;
+  gap: 34px;
+  margin: 42px 0;
+  padding: clamp(27px, 4vw, 42px);
+  overflow: hidden;
+  border-radius: 17px;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(218,47,63,.38),
+      transparent 48%
+    ),
+    #1a1517;
+  color: #fff;
+}
+
+.industry-blog .industry-emphasis::after {
+  content: "";
+  position: absolute;
+  top: -90px;
+  right: -65px;
+  width: 265px;
+  height: 265px;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 50%;
+}
+
+.industry-blog .industry-emphasis > span {
+  position: relative;
+  z-index: 1;
+  color: #f0bec6;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.industry-blog .industry-emphasis > strong {
+  position: relative;
+  z-index: 1;
+  max-width: 670px;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 750;
+  letter-spacing: -.055em;
+  line-height: 1.25;
+}
+
+/* ==========================================================
+   MID-ARTICLE LEAD GENERATION PANEL
+========================================================== */
+
+.industry-blog .industry-mid-cta {
+  position: relative;
+  margin: 44px 0 50px;
+  padding: clamp(29px, 5vw, 50px);
+  overflow: hidden;
+  border-radius: 20px;
+  background:
+    radial-gradient(
+      ellipse at 85% 15%,
+      rgba(186,13,23,.7),
+      transparent 55%
+    ),
+    linear-gradient(
+      130deg,
+      #201315,
+      #0d0d0e 75%
+    );
+  color: #fff;
+}
+
+.industry-blog .industry-mid-cta::after {
+  content: "";
+  position: absolute;
+  right: -110px;
+  bottom: -150px;
+  width: 340px;
+  height: 340px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.industry-blog .industry-mini-label {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 18px;
+  color: #f3c8d0;
+  font-size: 10px !important;
+  font-weight: 800;
+  letter-spacing: .11em;
+}
+
+.industry-blog .industry-mid-cta h3 {
+  position: relative;
+  z-index: 1;
+  max-width: 670px;
+  margin: 0 0 18px;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(28px, 3.5vw, 43px);
+  font-weight: 800;
+  letter-spacing: -.065em;
+  line-height: 1.17;
+}
+
+.industry-blog .industry-mid-cta > p:not(.industry-mini-label) {
+  position: relative;
+  z-index: 1;
+  max-width: 590px;
+  margin: 0 0 25px;
+  color: #e9dfe1;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.industry-blog .industry-mid-cta .journal-btn {
+  position: relative;
+  z-index: 1;
+  min-height: 50px;
+}
+
+/* ==========================================================
+   PROJECT PORTFOLIO CARDS
+========================================================== */
+
+.industry-blog .industry-project-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin: 36px 0;
+}
+
+.industry-blog .industry-project {
+  display: grid;
+  grid-template-columns: minmax(180px, .85fr) 1fr;
+  align-items: stretch;
+  gap: 25px;
+  min-width: 0;
+  padding: 16px;
+  overflow: hidden;
+  border: 1px solid #e5dedc;
+  border-radius: 16px;
+  background: #faf9f7;
+  text-decoration: none !important;
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.industry-blog .industry-project:hover {
+  transform: translateY(-4px);
+  border-color: #d9aeb5;
+  box-shadow: 0 15px 35px rgba(50,23,28,.09);
+}
+
+.industry-blog .industry-project > img {
+  display: block;
+  width: 100%;
+  height: 238px;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 11px;
+  background: #fff;
+}
+
+.industry-blog .industry-project > div {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 12px 5px 12px 0;
+}
+
+.industry-blog .industry-project > div > span {
+  color: #a92735;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  line-height: 1.6;
+}
+
+.industry-blog .industry-project h3 {
+  margin: 13px 0 12px;
+  color: #171717;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.industry-blog .industry-project p {
+  margin: 0 0 17px;
+  color: #656064;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.industry-blog .industry-project strong {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ab2634;
+  color: #9f2331;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* ==========================================================
+   ARTICLE FAQ
+========================================================== */
+
+.industry-blog .journal-post-faq {
+  margin-top: 65px;
+}
+
+.industry-blog .journal-post-faq h2 {
+  max-width: 760px;
+  margin-bottom: 30px;
+  font-size: clamp(30px, 3.4vw, 42px);
+}
+
+.industry-blog .journal-post-faq details {
+  overflow: hidden;
+  border: 1px solid #e6dedc;
+  border-radius: 12px;
+  background: #fdfcfb;
+}
+
+.industry-blog .journal-post-faq details[open] {
+  border-color: #dcbcc1;
+  background: #faf4f4;
+}
+
+.industry-blog .journal-post-faq summary {
+  padding-top: 22px;
+  padding-bottom: 22px;
+  font-size: 16px;
+}
+
+.industry-blog .journal-post-faq details p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* ==========================================================
+   FINAL CTA
+========================================================== */
+
+.industry-blog .industry-final-cta {
+  position: relative;
+  isolation: isolate;
+  margin-top: 65px;
+  padding: clamp(30px, 5vw, 55px);
+  overflow: hidden;
+  border-radius: 20px;
+  background:
+    radial-gradient(
+      circle at 98% 8%,
+      rgba(224,30,50,.48),
+      transparent 42%
+    ),
+    linear-gradient(
+      135deg,
+      #231216,
+      #090b0b
+    );
+  color: #fff;
+}
+
+.industry-blog .industry-final-cta::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -90px;
+  right: -95px;
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+.industry-blog .industry-final-cta > span {
+  display: block;
+  color: #f0bbc5;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  line-height: 1.6;
+}
+
+.industry-blog .industry-final-cta h2 {
+  max-width: 700px;
+  margin: 22px 0;
+  color: #fff;
+  font-size: clamp(33px, 4vw, 50px);
+  font-weight: 800;
+  letter-spacing: -.065em;
+  line-height: 1.16;
+}
+
+.industry-blog .industry-final-cta > p {
+  max-width: 630px;
+  margin: 0 0 17px;
+  color: #e8dbe0;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.industry-blog .industry-final-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 31px;
+}
+
+.industry-blog .industry-final-actions .journal-btn {
+  min-height: 50px;
+  font-size: 14px;
+}
+
+.industry-blog .industry-final-cta .industry-final-note {
+  margin-top: 27px;
+  margin-bottom: 0;
+  color: #c9b4bb;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1080px) {
+
+  .industry-blog .journal-post-layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .industry-blog .industry-project {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .industry-blog .industry-project > img {
+    height: 260px;
+  }
+
+  .industry-blog .industry-project > div {
+    padding: 8px;
+  }
+
+}
+
+@media (max-width: 980px) {
+
+  .industry-blog .journal-post-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-blog .industry-sidebar {
+    position: static;
+  }
+
+  .industry-blog .industry-side-cta {
+    display: none;
+  }
+
+  .industry-blog .industry-project {
+    grid-template-columns: minmax(180px, .8fr) 1fr;
+    gap: 25px;
+  }
+
+  .industry-blog .industry-project > img {
+    height: 240px;
+  }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 680px) {
+
+  .industry-blog .industry-hero {
+    padding-top: 55px;
+    padding-bottom: 48px;
+  }
+
+  .industry-blog .journal-post-heading {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .industry-blog .journal-post-heading h1 {
+    font-size: clamp(35px, 8.8vw, 49px);
+    line-height: 1.13;
+    letter-spacing: -.065em;
+  }
+
+  .industry-blog .journal-post-lead {
+    margin-inline: auto;
+    font-size: 17px !important;
+    line-height: 1.75 !important;
+  }
+
+  .industry-blog .journal-post-meta {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .industry-blog .industry-hero-actions {
+    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 390px;
+    gap: 10px;
+    margin: 28px auto 0;
+  }
+
+  .industry-blog .industry-hero-actions .journal-btn {
+    width: 100%;
+  }
+
+  .industry-blog .industry-inline-link {
+    align-self: center;
+    justify-content: center;
+  }
+
+  .industry-blog .industry-feature-image {
+    height: clamp(255px, 73vw, 360px);
+    margin-top: 40px;
+    border-radius: 15px;
+  }
+
+  .industry-blog .industry-feature-image img {
+    object-position: center;
+  }
+
+  .industry-blog .journal-post-body > h2 {
+    margin-top: 43px;
+    font-size: 29px;
+  }
+
+  .industry-blog .journal-post-body > h3 {
+    margin-top: 28px;
+    font-size: 21px;
+  }
+
+  .industry-blog .industry-emphasis {
+    min-height: 0;
+    gap: 36px;
+    margin: 35px 0;
+    padding: 27px;
+  }
+
+  .industry-blog .industry-emphasis > strong {
+    font-size: 26px;
+  }
+
+  .industry-blog .industry-mid-cta {
+    margin: 36px 0 43px;
+    padding: 29px;
+    border-radius: 16px;
+  }
+
+  .industry-blog .industry-mid-cta h3 {
+    font-size: 29px;
+  }
+
+  .industry-blog .industry-mid-cta .journal-btn {
+    width: 100%;
+  }
+
+  .industry-blog .industry-project-list {
+    gap: 15px;
+  }
+
+  .industry-blog .industry-project {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .industry-blog .industry-project > img {
+    height: 240px;
+    border-radius: 9px;
+  }
+
+  .industry-blog .industry-project > div {
+    padding: 13px 10px 15px;
+  }
+
+  .industry-blog .industry-project h3 {
+    font-size: 23px;
+  }
+
+  .industry-blog .journal-post-faq {
+    margin-top: 50px;
+  }
+
+  .industry-blog .journal-post-faq h2 {
+    font-size: 30px;
+  }
+
+  .industry-blog .industry-final-cta {
+    margin-top: 50px;
+    padding: 28px;
+    border-radius: 16px;
+  }
+
+  .industry-blog .industry-final-cta h2 {
+    font-size: clamp(31px, 7.5vw, 39px);
+  }
+
+  .industry-blog .industry-final-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .industry-blog .industry-final-actions .journal-btn {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 390px) {
+
+  .industry-blog .journal-post-heading h1 {
+    font-size: 34px;
+  }
+
+  .industry-blog .industry-emphasis,
+  .industry-blog .industry-mid-cta,
+  .industry-blog .industry-final-cta {
+    padding: 23px;
+  }
+
+  .industry-blog .industry-feature-image {
+    height: 255px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .industry-blog *,
+  .industry-blog *::before,
+  .industry-blog *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+}
