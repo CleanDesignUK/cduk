@@ -1646,3 +1646,11 @@ body[data-page="services"] .btn {
     transform: none;
   }
 }
+
+/* Square imagery for Services overview cards */
+.svc-main-services .svc-feature-media{height:auto;aspect-ratio:1/1;padding:14px}
+.svc-main-services .svc-feature-media>img{height:100%;aspect-ratio:1/1;object-fit:cover;object-position:center top}
+.svc-service-grid .svc-service-visual.svc-visual-photo{height:auto;aspect-ratio:1/1}
+.svc-service-grid .svc-visual-photo img{height:100%;aspect-ratio:1/1;object-fit:cover;object-position:center top}
+.svc-work-image{height:auto;aspect-ratio:1/1}
+.svc-work-image img{aspect-ratio:1/1;object-fit:cover;object-position:center top}

@@ -2816,3 +2816,7 @@
     transition: none;
   }
 }
+
+/* HighLevel white logo panel */
+.gh-official-logo{background:#fff;border-color:rgba(0,0,0,.08)}
+.gh-official-logo img{max-width:100%;max-height:170px;width:100%;height:auto;object-fit:contain}

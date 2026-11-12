@@ -1650,3 +1650,8 @@
     will-change: auto;
   }
 }
+
+/* Display website previews as wide project screenshots without square framing */
+.portfolio-section .portfolio-image{height:auto;aspect-ratio:1.95/1;background:#fff}
+.portfolio-section .portfolio-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top}
+@media(max-width:768px){.portfolio-section .portfolio-image{height:auto;aspect-ratio:1.95/1}}
