@@ -3569,3 +3569,60 @@
     transform: none;
   }
 }
+
+
+/* 2026 contrast correction: Virtual Assistant flexible support cards.
+   Restrict all changes to this section; decorative rings no longer compete
+   with headings or body text on desktop and mobile. */
+.va-flexible .va-flexible-card {
+  background: #f3eeee;
+  color: #291d21;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 22px 52px rgba(0,0,0,.16);
+}
+.va-flexible .va-flexible-card:nth-child(1) {
+  background: linear-gradient(145deg,#f6f0ef 0%,#eadfdf 100%);
+  color: #2c1e23;
+}
+.va-flexible .va-flexible-card:nth-child(2) {
+  background: linear-gradient(150deg,#80242f 0%,#641823 65%,#491720 100%);
+  color: #fff;
+}
+.va-flexible .va-flexible-card:nth-child(3) {
+  background: linear-gradient(145deg,#28242a,#151417);
+  color: #fff;
+}
+.va-flexible .va-flexible-card::before {
+  opacity: .10;
+  filter: saturate(.48);
+  pointer-events: none;
+}
+.va-flexible .va-flexible-card:nth-child(1)::before { opacity: .085; }
+.va-flexible .va-flexible-card:nth-child(2)::before { opacity: .13; }
+.va-flexible .va-flexible-card:nth-child(3)::before { opacity: .12; }
+.va-flexible .va-flexible-card > span,
+.va-flexible .va-flexible-card h3,
+.va-flexible .va-flexible-card > p,
+.va-flexible .va-flexible-card ul {
+  position: relative;
+  z-index: 3;
+  text-shadow: none;
+}
+.va-flexible .va-flexible-card:nth-child(1) h3 { color:#24171b; }
+.va-flexible .va-flexible-card:nth-child(1) > p,
+.va-flexible .va-flexible-card:nth-child(1) li { color:#48333a; }
+.va-flexible .va-flexible-card:nth-child(2) h3,
+.va-flexible .va-flexible-card:nth-child(3) h3 { color:#fff; }
+.va-flexible .va-flexible-card:nth-child(2) > p,
+.va-flexible .va-flexible-card:nth-child(2) li,
+.va-flexible .va-flexible-card:nth-child(3) > p,
+.va-flexible .va-flexible-card:nth-child(3) li { color:#f1e5e8; }
+.va-flexible .va-flexible-card ul {
+  border-top-width:1px;
+}
+@media (max-width:700px) {
+  .va-flexible .va-flexible-card::before { opacity:.06; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .va-flexible .va-flexible-card::before { animation:none!important; }
+}
