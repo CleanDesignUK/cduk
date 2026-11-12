@@ -80,8 +80,8 @@ jobs:
             except UnicodeDecodeError:
               continue
             for previous, current in legacy_links.items():
-                text = text.replace(previous, current)
-              text = asset_paths.sub('/cduk/', text)
+              text = text.replace(previous, current)
+            text = asset_paths.sub('/cduk/', text)
             if file.suffix.lower() == '.html':
               text = text.replace('href="/"', 'href="/cduk/"')
               text = text.replace("href='/'", "href='/cduk/'")
