@@ -90,6 +90,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
+  // Display this confirmation only when the submission service returns success.
+  let sweetAlertLoading;
+  async function successPopup() {
+    const title = "Thank you! We've received your enquiry.";
+    const message = "Our team will be in touch with you soon to discuss how we can help.";
+    if (!window.Swal?.fire && !sweetAlertLoading) {
+      sweetAlertLoading = new Promise((resolve,reject) => {
+        const script = document.createElement("script");
+        script.src = "https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js";
+        script.async = true;
+        script.onload = () => window.Swal?.fire ? resolve() : reject(Error("Library unavailable"));
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+    try {
+      if (sweetAlertLoading) await sweetAlertLoading;
+      await window.Swal.fire({
+        title, text: message, icon: "success", confirmButtonText: "Close",
+        confirmButtonColor: "#ba0d17", background: "#fff",
+        color: "#090b0b", showCloseButton: true
+      });
+    } catch {
+      window.alert(title + "\n\n" + message);
+    }
+  }
+
   forms.forEach(form => {
 
     const formStarted = Date.now();
@@ -211,6 +238,8 @@ document.addEventListener("DOMContentLoaded", () => {
           "Thank you. Your enquiry has been sent successfully.",
           "success"
         );
+
+        await successPopup();
 
       } catch (error) {
 
