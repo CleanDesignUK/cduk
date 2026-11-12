@@ -1,0 +1,109 @@
+name: CDUK GitHub Pages Preview
+
+on:
+  push:
+    branches:
+      - gh-pages-preview
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: cduk-preview-pages
+  cancel-in-progress: true
+
+jobs:
+  publish-preview:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout preview branch
+        uses: actions/checkout@v4
+
+      - name: Build path-safe project preview
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import shutil
+          import re
+
+          root = Path('.')
+          output = Path('_site')
+          output.mkdir(exist_ok=True)
+
+          excluded = {
+            '.git', '.github', '.htaccess', '_redirects',
+            'CNAME', 'README.md', '_site', 'sitemap.xml', 'robots.txt'
+          }
+          for entry in root.iterdir():
+            if entry.name in excluded:
+              continue
+            destination = output / entry.name
+            if entry.is_dir():
+              shutil.copytree(entry, destination)
+            elif entry.is_file():
+              shutil.copy2(entry, destination)
+
+          asset_paths = re.compile(
+            r'(?<![A-Za-z0-9:/])/(?!cduk/)(?=(?:css|js|images|html|components)/)'
+          )
+          root_hrefs = re.compile(
+            r'((?:href|action)\\s*=\\s*["\\\'])/([ "\\\'])',
+            re.IGNORECASE
+          )
+          robot_meta = re.compile(
+            r'<meta\\b[^>]*\\bname\\s*=\\s*["\\\']robots["\\\'][^>]*>',
+            re.IGNORECASE
+          )
+
+          for file in output.rglob('*'):
+            if not file.is_file() or file.suffix.lower() not in {
+              '.html', '.css', '.js', '.json', '.webmanifest'
+            }:
+              continue
+            try:
+              text = file.read_text(encoding='utf-8')
+            except UnicodeDecodeError:
+              continue
+            text = asset_paths.sub('/cduk/', text)
+            if file.suffix.lower() == '.html':
+              text = text.replace('href="/"', 'href="/cduk/"')
+              text = text.replace("href='/'", "href='/cduk/'")
+              text = robot_meta.sub(
+                '<meta name="robots" content="noindex,nofollow">', text
+              )
+              if not re.search(r'<meta\\s+name=["\\\']robots', text, re.I):
+                text = text.replace(
+                  '</head>',
+                  '<meta name="robots" content="noindex,nofollow">\\n</head>',
+                  1
+                )
+              text = text.replace(
+                '</head>',
+                '<meta name="googlebot" content="noindex,nofollow">\\n</head>',
+                1
+              )
+            file.write_text(text, encoding='utf-8')
+
+          (output / '.nojekyll').write_text('')
+          (output / 'robots.txt').write_text('User-agent: *\\nDisallow: /\\n')
+          print('Preview built with /cduk/ paths. Main branch was not changed.')
+          PY
+
+      - name: Set up GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload preview
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy preview
+        id: deployment
+        uses: actions/deploy-pages@v4
