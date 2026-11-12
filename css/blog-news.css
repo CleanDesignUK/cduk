@@ -1,0 +1,21 @@
+/* New 2026 tech news blog articles: scoped; global nav/footer styles untouched. */
+.news-article .news-hero { background:radial-gradient(ellipse at 97% 10%,rgba(186,13,23,.12),transparent 45%),#f6f4f0; }
+.news-article .journal-post-heading h1 {max-width:1050px;letter-spacing:-.067em;}
+.news-article .news-hero-image {position:relative;height:clamp(300px,41vw,530px);}
+.news-article .news-hero-image img {filter:saturate(.75);object-position:center;}
+.news-article .news-hero-image::after {content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(0,0,0,.8),transparent 60%);}
+.news-article .news-image-overlay {position:absolute;left:28px;bottom:25px;z-index:2;display:grid;gap:5px;color:#fff;}
+.news-article .news-image-overlay span {font-size:11px;letter-spacing:.13em;font-weight:800;color:#f6bac4;}
+.news-article .news-image-overlay strong {font-size:clamp(18px,2vw,26px);font-weight:750;}
+.news-article .journal-answer {background:#fff1f2;border:1px solid #e8c8cf;}
+.news-article .journal-post-body p,.news-article .journal-post-body li {font-size:16px;line-height:1.85;}
+.news-article .news-article-section {scroll-margin-top:115px;}
+.news-article .news-article-section h2 {margin-top:48px;}
+.news-article .news-article-section p {margin:0 0 20px;}
+.news-article .news-sources p {color:#61585c;}
+.news-article .news-contact-link {margin-left:10px;}
+.news-article .news-related {display:grid;gap:12px;margin-top:45px;border-top:1px solid #e3dedc;padding-top:20px;}
+.news-article .news-related h2 {margin:0 0 5px;font-size:26px;}
+.news-article .news-related a {display:block;padding:13px 16px;border-radius:10px;background:#f8f5f4;color:#7d1a28!important;text-decoration:none!important;}
+.news-article .news-related a:hover {background:#f7e6e9;}
+@media(max-width:650px){.news-article .news-image-overlay {left:20px;bottom:18px;right:20px}.news-article .news-contact-link{margin-left:0;margin-top:10px}.news-article .journal-post-cta .journal-btn{width:100%;}}
