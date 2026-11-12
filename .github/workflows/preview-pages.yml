@@ -19,7 +19,7 @@ jobs:
   publish-preview:
     runs-on: ubuntu-latest
     environment:
-      name: github-pages
+      name: cduk-preview
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout preview branch
