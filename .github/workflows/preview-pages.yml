@@ -81,18 +81,18 @@ jobs:
               if not re.search(r'<meta\\s+name=["\\\']robots', text, re.I):
                 text = text.replace(
                   '</head>',
-                  '<meta name="robots" content="noindex,nofollow">\\n</head>',
+                  '<meta name="robots" content="noindex,nofollow">\n</head>',
                   1
                 )
               text = text.replace(
                 '</head>',
-                '<meta name="googlebot" content="noindex,nofollow">\\n</head>',
+                '<meta name="googlebot" content="noindex,nofollow">\n</head>',
                 1
               )
             file.write_text(text, encoding='utf-8')
 
           (output / '.nojekyll').write_text('')
-          (output / 'robots.txt').write_text('User-agent: *\\nDisallow: /\\n')
+          (output / 'robots.txt').write_text('User-agent: *\nDisallow: /\n')
           print('Preview built with /cduk/ paths. Main branch was not changed.')
           PY
 
