@@ -62,6 +62,14 @@ jobs:
             re.IGNORECASE
           )
 
+          legacy_links = {
+              '/html/branding.html': '/html/branding-logo-design-north-wales.html',
+              '/html/seo.html': '/html/seo-agency-north-wales.html',
+              '/html/digital-marketing.html': '/html/digital-marketing-agency-north-wales.html',
+              '/html/sales-funnels.html': '/html/sales-funnels-automation-north-wales.html',
+              '/html/gohighlevel-support.html': '/html/gohighlevel-crm-setup-automation-north-wales.html'
+          }
+
           for file in output.rglob('*'):
             if not file.is_file() or file.suffix.lower() not in {
               '.html', '.css', '.js', '.json', '.webmanifest'
@@ -71,7 +79,9 @@ jobs:
               text = file.read_text(encoding='utf-8')
             except UnicodeDecodeError:
               continue
-            text = asset_paths.sub('/cduk/', text)
+            for previous, current in legacy_links.items():
+                text = text.replace(previous, current)
+              text = asset_paths.sub('/cduk/', text)
             if file.suffix.lower() == '.html':
               text = text.replace('href="/"', 'href="/cduk/"')
               text = text.replace("href='/'", "href='/cduk/'")
